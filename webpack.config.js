@@ -10,6 +10,7 @@ module.exports = {
     externals: {
         'React': 'react'
     },
+    watch:true,
     devServer: {
         historyApiFallback: true,
       },

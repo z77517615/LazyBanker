@@ -1,7 +1,7 @@
 import "./index.css";
 import React from "react";
 import Home from "./Home.js";
-import List from "./list.js";
+import List from "./Component/list.js";
 import { BrowserRouter , Route, Switch } from "react-router-dom";
 
 function App() {
