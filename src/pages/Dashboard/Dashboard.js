@@ -1,7 +1,10 @@
+//style
+import "./Dashboard.css"
+
 import { Link } from "react-router-dom";
 import React from "react";
 
-export default function Home (){
+export default function Dashboard (){
   return (
     <div className="home">
       <div className="title">React 練習專案</div>
