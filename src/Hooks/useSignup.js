@@ -28,8 +28,6 @@ export const useSignup = () => {
 
             //upload user thumbnail
             const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`
-            // const img =  await storage.ref(uploadPath).put(thumbnail)
-            // const photoURL =await img.ref.getDownloadURL()
             const imgRef = ref(storage, uploadPath)
             const img = await uploadBytes(imgRef , thumbnail)
             const imgUrl= await getDownloadURL(imgRef)

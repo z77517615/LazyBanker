@@ -1,5 +1,5 @@
 import './Navbar.css'
-import bank from '../../assets/bank.svg'
+// import bank from '../../assets/bank.svg'
 
 
 import React  from "react";
@@ -17,8 +17,8 @@ export default function Navbar(){
         <nav className="navbar">
             <ul>
                 <li className="title">
-                    <img src={bank} alt="bank logo" />
-                    <span>Lazybanker</span>
+                    {/* <img src={bank} alt="bank logo" /> */}
+                    <Link to="/"><span>Lazybanker</span></Link>
                 </li>
                 {!user && (
                 <>
@@ -27,8 +27,7 @@ export default function Navbar(){
                 </>
                 )}
                 {user && (
-                <>  <img src ={user.photoURL}></img>
-                    <li className="name">Hello , {user.displayName}</li>
+                <>  
                     <li>
                         <button className='btn' onClick={logout}>Logout</button>
                     </li>

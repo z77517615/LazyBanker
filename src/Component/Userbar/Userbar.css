@@ -1,0 +1,32 @@
+.userbar {
+    width: 100%;
+    padding: 12px 10px;
+    box-sizing: border-box;
+  }
+
+.userbar ul {
+display: flex;
+margin: 0 auto;
+max-width: 1200px;
+align-items: center;
+}
+
+.userbar p {
+    font-size: 14px;
+    color:gray;
+    padding-top: 5px;
+    }
+
+.name{
+    font-size: larger;
+    font-weight: bold;
+  }
+
+  .userbar img {
+    margin-right: 10px;
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+
+  }
+

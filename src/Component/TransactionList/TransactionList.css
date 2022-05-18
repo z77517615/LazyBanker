@@ -1,0 +1,9 @@
+.transaction-list{
+    margin-top: 20px;
+}
+
+.transaction-item{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding:5px;
+}

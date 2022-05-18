@@ -1,0 +1,84 @@
+.transaction-list{
+    width: 500px;
+    padding : 5px;
+    margin: 30px 50px 30px 30px;
+    max-height:80vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.transaction-item {
+    margin: 20px;
+    border: 1px solid #f2f2f2;
+    box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
+    padding: 5px;
+  }
+
+.addlist-container{
+    display:flex;
+    align-items: center;
+  }
+
+.addlist-container_item{
+    width:200px;
+    margin:10px
+}
+
+.addlist-container_button{
+    margin-left:auto;
+ 
+}
+
+.addlist-container_item div{
+    display: flex;
+}
+.list-title{
+    margin-right:auto;
+}
+
+/* .list-item{
+    right:0px;
+} */
+
+.addlist-container_button .delete,
+.addlist-container_button .edit{
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:10px;
+}
+
+::-webkit-scrollbar{
+    width:5px
+}
+::-webkit-scrollbar-track{
+    background:#f1f1f1
+}
+::-webkit-scrollbar-thumb{
+    background:rgb(55, 98, 138)
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#555
+}
+
+@media (max-width:1200px) {
+    .transaction-list{
+        margin: 20px 5px 20px 5px;
+        width:60%;
+        max-height: 600px;
+    }
+    .transaction-item {
+        margin: 5px;
+      }
+            
+}
+
+@media (max-width:600px) {
+    .transaction-list{
+        margin: 20px 5px 20px 5px;
+        width:100%;
+    }
+    .transaction-item {
+        margin: 5px;
+      }
+            
+}

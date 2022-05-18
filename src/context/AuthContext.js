@@ -13,8 +13,7 @@ export const authReducer = (state,action) => {
             return {...state, user: action.payload, authIsReady : true}
         default : 
             return state 
-    }
-    
+    }   
 }
 
 export const AuthContextProvider = ({children}) =>{
@@ -22,7 +21,6 @@ export const AuthContextProvider = ({children}) =>{
         user:null,
         authIsReady:false
     })
-
     useEffect(() => {
         const unsub =auth.onAuthStateChanged((user)=>{
             dispatch({type: "AUTH_IS_READY" ,payload: user})
@@ -35,5 +33,4 @@ return(
         {children}
     </AuthContext.Provider>
 )
- 
 }

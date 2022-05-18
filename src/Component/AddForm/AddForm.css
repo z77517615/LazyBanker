@@ -1,0 +1,64 @@
+
+.addFrom-container {
+    max-width: 480px;
+    padding : 10px;
+    margin: 30px 30px 30px 30px;
+    border: #90ccc2 solid 4px;
+    border-radius: 4px;
+}
+
+.transaction-form{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px ,2fr));
+    grid-template-rows: 1fr 1fr;
+}
+.sub-button{
+    width:150px;
+    margin:5px;
+}
+
+input,select{
+    padding: 8px 6px;
+    font-size: 1em;
+    color: #777;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgb(162, 160, 160);
+    border-radius: 4px;
+}
+
+.transaction-form label{
+    border-bottom: 2px gray solid;
+    margin: 20px 10px;
+    padding:5px;
+}
+
+button {
+    background: none;
+    border: 2px solid #1f7597;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #1f7597;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:active {
+    border: 2px solid #3b4f55;
+    background: #3b4f55;
+    color: #fff;
+  }
+
+@media (max-width:1200px) {
+    .transaction-form{
+        width:80%;
+    }
+}
+
+
+@media (max-width:600px) {
+    input{
+        width:90%;
+    }
+} 

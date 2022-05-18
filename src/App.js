@@ -12,18 +12,20 @@ import Login from "./pages/login/login.js";
 import Signup from "./pages/signup/signup.js";
 import Create from "./pages/create/create.js";
 import Navbar from "./Component/Navbar/Navbar";
+import Userbar from './Component/Userbar/Userbar'
 
 
 
 
 function App() {
-  const { authIsReady ,user} = useAuthContext()
+  const { authIsReady , user} = useAuthContext()
 
   return (
     <div className="content">
       {authIsReady && (
         <BrowserRouter >  
           <Navbar />
+          <Userbar />
           <Switch>
             <Route exact path="/">
               {user && <Dashboard />}
