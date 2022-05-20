@@ -2,15 +2,15 @@
 .addFrom-container {
     max-width: 480px;
     padding : 10px;
-    margin: 30px 30px 30px 30px;
+    margin: 10px 30px;
     border: #90ccc2 solid 4px;
     border-radius: 4px;
 }
 
 .transaction-form{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px ,2fr));
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(2,minmax(120px ,2fr));
+    grid-template-rows: repeat(2, 1fr);;
 }
 .sub-button{
     width:150px;
@@ -51,8 +51,19 @@ button {
   }
 
 @media (max-width:1200px) {
-    .transaction-form{
+    /* .transaction-form{
         width:80%;
+    } */
+    .transaction{
+        width:80%;
+    }
+    .transaction-form label{
+        margin: 20px 5px;
+    }
+    .addFrom-container {
+        margin: 10px;    
+        padding : 5px;
+
     }
 }
 

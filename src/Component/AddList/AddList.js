@@ -2,7 +2,7 @@ import "./AddList.css"
 
 import React  from "react";
 import { useCollection } from "../../Hooks/useCollection";
-import {editTransaction } from "../../Hooks/useTracker"
+import {editTransaction } from "../../Hooks/useTransaction"
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -39,15 +39,15 @@ export default function AddList ({uid,passTransaction}){
             <div className="addlist-container">
                 <div className="addlist-container_item">
                     <div>
-                        <p className="list-title">Date :</p>
+                        <p className="list-title" style={{fontWeight:"bold"}}>Date :</p>
                         <p className="list-item">{document.date}</p>
                     </div>
                     <div>
-                        <p className="list-title">{document.category} :</p>
+                        <p className="list-title" style={{fontWeight:"bold"}}>{document.category} :</p>
                         <p className="list-item">${document.amount}</p>
                     </div>
                     <div>    
-                        <p className="list-title">Name :</p>
+                        <p className="list-title" style={{fontWeight:"bold"}}>Name :</p>
                         <p className="list-item">{document.transactionName}</p>
                     </div>
                 </div>

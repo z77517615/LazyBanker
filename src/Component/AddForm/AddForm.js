@@ -1,7 +1,9 @@
 import './AddForm.css'
 import React,{ useState ,useEffect} from "react";
 
-import {editTransaction} from "../../Hooks/useTracker"
+import {editTransaction} from "../../Hooks/useTransaction"
+import{ SmallCalendar } from "../../Component/SmallCalendar/SmallCalendar"
+
 
 export default function AddForm({uid,transaction}){
   const [date, setDate] = useState('')
@@ -25,7 +27,7 @@ export default function AddForm({uid,transaction}){
       })
     }
     if(transactionstate && transactionstate=="update"){
-      console.log("update1")
+      // console.log("update1")
       const id = transaction.id
       setTransactionstate('')
       updateTransaction({
@@ -48,7 +50,7 @@ export default function AddForm({uid,transaction}){
 }
 
   useEffect(()=>{
-    console.log(response.success)
+    // console.log(response.success)
     if (response.success){
       setDate('')
       setCategory('')
@@ -79,59 +81,64 @@ export default function AddForm({uid,transaction}){
 
 
   return (
-    <div className="addFrom-container">
-      <h3>Add a Transaction</h3>
-      <form onSubmit={handleSubmit}>
-        <div className ='transaction-form'>
-          <label>
-            <select
-              onChange={(e) => setEarn(e.target.value)} 
-              >
-              <option value="Income" selected={selected("Income")}>Income</option>
-              <option value="Expend" selected={selected("Expend")}>Expend</option>
-            </select>
-          </label>
-          <label>
-              <input 
-                type="date"
-                required
-                value={date} 
-                onChange={(e) => setDate(e.target.value)} 
-                placeholder='YY-MM-DD'
-              />
-            </label>
+    <div className="transaction">
+      <header>
+        <SmallCalendar />
+      </header>
+      <main className="addFrom-container">
+        <h3>Transaction</h3>
+        <form onSubmit={handleSubmit}>
+          <div className ='transaction-form'>
             <label>
-              <input 
-                type="text"
-                required
-                onChange={(e) => setCategory(e.target.value)} 
-                value={category} 
-                placeholder='category'
-              />
+              <select
+                onChange={(e) => setEarn(e.target.value)} 
+                >
+                <option value="Income" selected={selected("Income")}>Income</option>
+                <option value="Expend" selected={selected("Expend")}>Expend</option>
+              </select>
             </label>
-            <label>
-              <input 
-                type="text"
-                required
-                onChange={(e) => setTransactionName(e.target.value)} 
-                value={transactionName} 
-                placeholder='transcation name'
-              />
-            </label>
-            <label>
-              <input
-                type="number"
-                required
-                onChange={(e) => setAmount(e.target.value)} 
-                value={amount} 
-                placeholder='Amount ($)'
-              />
-            </label>
-          </div>
-        {!transactionstate && <button className="sub-button">Create</button>}
-        {transactionstate && <button className="sub-button" onClick={()=>(setTransactionstate("update"))}>UpDate</button>}
-        {transactionstate && <button className="sub-button"onClick={()=>(setTransactionstate("cancel"))}>Cancel</button>}
-      </form>
+            {/* <label>
+                <input 
+                  type="date"
+                  required
+                  value={date} 
+                  onChange={(e) => setDate(e.target.value)} 
+                  placeholder='YY-MM-DD'
+                />
+              </label> */}
+              <label>
+                <input 
+                  type="text"
+                  required
+                  onChange={(e) => setCategory(e.target.value)} 
+                  value={category} 
+                  placeholder='category'
+                />
+              </label>
+              <label>
+                <input 
+                  type="text"
+                  required
+                  onChange={(e) => setTransactionName(e.target.value)} 
+                  value={transactionName} 
+                  placeholder='transcation name'
+                />
+              </label>
+              <label>
+                <input
+                  type="number"
+                  required
+                  onChange={(e) => setAmount(e.target.value)} 
+                  value={amount} 
+                  placeholder='Amount ($)'
+                />
+              </label>
+            </div>
+          {!transactionstate && <button className="sub-button">Create</button>}
+          {transactionstate && <button className="sub-button" onClick={()=>(setTransactionstate("update"))}>UpDate</button>}
+          {transactionstate && <button className="sub-button"onClick={()=>(setTransactionstate("cancel"))}>Cancel</button>}
+        </form>
+      </main>
     </div>
   );
 }
