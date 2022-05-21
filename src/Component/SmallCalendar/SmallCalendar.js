@@ -5,12 +5,16 @@ import left from "../../assets/left.png"
 
 import { getMonth } from "../../Hooks/useutil"
 import styles from "./SmallCalendar.module.css" 
-import { reauthenticateWithPhoneNumber } from 'firebase/auth';
 
 
-export function SmallCalendar(){
+export function SmallCalendar({passpickday}){
+    const format = 'DD-MM-YY'
+    const nowday=dayjs().format(format)
+    
     const [currentMonthIndex , setCurrentIMonthIndex] =useState(dayjs().month())
     const [currentMonth ,setCurentMonth] = useState(getMonth())
+    const [pickday,setPickday]=useState(dayjs().format(format))
+
     useEffect(()=>{
         setCurentMonth(getMonth(currentMonthIndex))
     },[currentMonthIndex])
@@ -23,15 +27,20 @@ export function SmallCalendar(){
     }
 
     function getDayClass(day){
-        const format = 'DD-MM-YY'
-        const nowDay = dayjs().format(format)
         const currtDay = day.format(format)
-        if(nowDay === currtDay){
-            return "styles.currentDay"
-        }else{
+        if(nowday === currtDay){
+            passpickday(pickday)
+            return `${styles.currentDay}`
+        }if(pickday === currtDay){
+            passpickday(pickday)
+            return  `${styles.selected}`
+        }
+        else{
             return ""
         }
     }
+
+
     return ( 
         <div className={styles.smallcalendar}>
             <header className={styles.smallcalendar_header}>
@@ -56,9 +65,12 @@ export function SmallCalendar(){
                 {currentMonth.map((row,i)=>(
                     <React.Fragment key={i}>
                         {row.map((day,idx)=>(
-                            <button key={idx} className={`${styles.days} ${getDayClass(day)} `}>
-                                <span>{day.format('D')}</span>
-                            </button>
+                            <button key={idx} 
+                                    className={`${styles.days} ${getDayClass(day)}`} 
+                                    onClick={()=>(setPickday(day.format(format)))}
+                            >
+                                  <span>{day.format('D')}</span>
+                            </button> 
                         ))}
 
                     </React.Fragment>

@@ -6,13 +6,15 @@ import{ SmallCalendar } from "../../Component/SmallCalendar/SmallCalendar"
 
 
 export default function AddForm({uid,transaction}){
-  const [date, setDate] = useState('')
   const [category, setCategory] = useState('')
   const [earn, setEarn] = useState('')
   const [transactionName, setTransactionName] = useState('')
   const [amount, setAmount] = useState('')
   const [transactionstate , setTransactionstate] =useState('')
   const {addTransaction ,updateTransaction, response} = editTransaction('transaction')
+  const[pickday,setPickday]=useState('')
+  const date = pickday
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -41,7 +43,6 @@ export default function AddForm({uid,transaction}){
     }
     if(transactionstate && transactionstate=="cancel"){
       setTransactionstate('')
-      setDate('')
       setCategory('')
       setTransactionName('')
       setAmount('')
@@ -52,7 +53,6 @@ export default function AddForm({uid,transaction}){
   useEffect(()=>{
     // console.log(response.success)
     if (response.success){
-      setDate('')
       setCategory('')
       setTransactionName('')
       setAmount('')
@@ -63,7 +63,7 @@ export default function AddForm({uid,transaction}){
 
   useEffect(()=>{
     if(transaction){
-      setDate(transaction.date)
+      setPickday(transaction.date)
       setCategory(transaction.category)
       setTransactionName(transaction.transactionName)
       setAmount(transaction.amount)
@@ -83,7 +83,7 @@ export default function AddForm({uid,transaction}){
   return (
     <div className="transaction">
       <header>
-        <SmallCalendar />
+        <SmallCalendar passpickday={pickday =>setPickday(pickday)}/>
       </header>
       <main className="addFrom-container">
         <h3>Transaction</h3>

@@ -51,8 +51,6 @@ img:active{
     background-color:rgba(123, 225, 234, 0.838);
 }
 
-
-
 .days{
     background: none;
     border: none;
@@ -62,16 +60,36 @@ img:active{
     font-weight: bold;
     cursor: pointer;
     font-size: 1em;
+    margin:5px 5px
 }
 .days:active{
     border: none;
 }
+.selected{
+    background-color: rgb(130, 231, 114);
+    color:white
+}
 
-@media (max-width: 600px){
+.currentDay{
+    background: #70b8d5;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+
+}
+
+@media (max-width: 1200px){
     .cal_main{
+        padding: 5px 40px;
         grid-template-columns: repeat(7,40px);
         grid-template-rows: repeat(6,40px);
     }
+}
+
+@media (max-width: 600px){
     .smallcalendar_header{
         padding: 10px 50px;
     }
