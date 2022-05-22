@@ -19,7 +19,7 @@ const create = () => {
     return (
       <div className="list">
         <center>
-          <AddList uid={user.uid} passTransaction={Transaction =>setTransaction(Transaction)}/>
+          <AddList uid={user.uid} passTransaction={Transaction =>setTransaction(Transaction)} />
           <AddForm uid={user.uid} transaction={transaction}/>
         </center>
       </div>

@@ -1,26 +1,28 @@
-import React  from "react";
-import './Userbar.css'
-import { useAuthContext } from '../../Hooks/useAuthContext';
+import React from "react";
+import "./Userbar.css";
+import shopping from "../../assets/shopping.svg";
+import { useAuthContext } from "../../Hooks/useAuthContext";
+import { Link } from "react-router-dom";
 
+export default function Userbar() {
+  const { user } = useAuthContext();
 
-export default function Userbar(){
-    const {user} =useAuthContext()
-
-    return ( 
-        <nav className="userbar">
-            <ul>
-            {user && (
-                <>  
-                    <img src ={user.photoURL}></img>
-                    <div>
-                        <li className="name">Hello , {user.displayName}</li>
-                        <p>Welcome to create your own Financial Tracker</p>
-                    </div>
-
-                </>
-            )}
-            </ul>
-        </nav>
-     );
+  return (
+    <nav className="userbar">
+      <ul>
+        {user && (
+          <>
+            <img src={user.photoURL}></img>
+            <div>
+              <li className="name">Hello , {user.displayName}</li>
+              <p>Welcome to create your own Financial Tracker</p>
+            </div>
+            <Link to="/create">
+              <img className="shopping" src={shopping} />
+            </Link>
+          </>
+        )}
+      </ul>
+    </nav>
+  );
 }
- 

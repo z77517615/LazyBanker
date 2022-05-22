@@ -46,14 +46,20 @@ export const useSignup = () => {
         catch(err){
             if(!isCancelled){
                 console.log(err.message)
-                setError(err.message)
                 setIsPending(false)
+                if(err.message == "Firebase: Error (auth/invalid-email)."){
+                    setError("Invalid email, please input valid email ex.555555@gmail.com")
+                }else if(err.message == "Firebase: Password should be at least 6 characters (auth/weak-password)."){
+                    setError("Password should be at least 6 characters")
+                }else{
+                    setError(err.message)
+                }
             }
         }
     }
 
     useEffect(()=>{
-        return () =>setIsCanelled(true)
+        return () => setIsCanelled(true)
     },[])
     
     return { error , isPending , signup};

@@ -30,7 +30,13 @@ export const  useLogin = () => {
             if(!isCancelled){
                 console.log(err.message)
                 setIsPending(false)
-                setError(err.message)
+                if(err.message == "Firebase: Error (auth/user-not-found)."){
+                    setError("User not found, please Signup first")
+                }else if(err.message == "Firebase: Error (auth/wrong-password)."){
+                    setError("Wrong password")
+                }else{
+                    setError(err.message)
+                }
             }  
         }
     }

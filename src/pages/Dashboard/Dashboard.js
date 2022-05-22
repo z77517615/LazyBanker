@@ -1,9 +1,9 @@
 //style
 import "./Dashboard.css"
-import shopping from '../../assets/shopping.svg'
+import Userbar from '../../Component/Userbar/Userbar'
+
 
 import React from "react";
-import { Link } from "react-router-dom";
 import { useCollection } from "../../Hooks/useCollection";
 import { useAuthContext } from "../../Hooks/useAuthContext";
 
@@ -16,10 +16,10 @@ export default function Dashboard (){
 
   return (
     <div className="home">
+      <Userbar />
       <div className="chart1">Chart1</div>
       <div className="chart2">Chart2</div>
       <div className="list-container">
-        <Link to="/create"><img src= {shopping}/></Link>
         {error &&{error}}
         {documents && <TransactionList transactions={documents}/>}
       </div>

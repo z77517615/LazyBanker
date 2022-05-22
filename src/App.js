@@ -3,7 +3,7 @@ import "./index.css";
 
 //react
 import React from "react";
-import { BrowserRouter , Route, Switch ,Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "./Hooks/useAuthContext";
 
 //pages
@@ -12,20 +12,15 @@ import Login from "./pages/login/login.js";
 import Signup from "./pages/signup/signup.js";
 import Create from "./pages/create/create.js";
 import Navbar from "./Component/Navbar/Navbar";
-import Userbar from './Component/Userbar/Userbar'
-
-
-
 
 function App() {
-  const { authIsReady , user} = useAuthContext()
+  const { authIsReady, user } = useAuthContext();
 
   return (
     <div className="content">
       {authIsReady && (
-        <BrowserRouter >  
+        <BrowserRouter>
           <Navbar />
-          <Userbar />
           <Switch>
             <Route exact path="/">
               {user && <Dashboard />}
@@ -41,7 +36,7 @@ function App() {
             </Route>
             <Route path="/create">
               {user && <Create />}
-              {!user && <Redirect to ="/login" />}
+              {!user && <Redirect to="/login" />}
             </Route>
           </Switch>
         </BrowserRouter>

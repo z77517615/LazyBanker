@@ -30,3 +30,13 @@ align-items: center;
 
   }
 
+  .userbar a {
+    margin-left: auto;
+  }
+  a .shopping{
+    width: 40px;
+    height:40px;
+    border-radius: 0%;
+    background: none;
+
+  }
