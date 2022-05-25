@@ -1,4 +1,4 @@
-.transaction-list{
+.add-list{
     width: 500px;
     padding : 5px;
     margin: 30px 50px 30px 30px;
@@ -7,7 +7,7 @@
     overflow-x: hidden;
 }
 
-.transaction-item {
+.add-item {
     margin: 20px;
     border: 1px solid #f2f2f2;
     box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
@@ -61,23 +61,23 @@
 }
 
 @media (max-width:1200px) {
-    .transaction-list{
+    .add-list{
         margin: 20px 5px 20px 5px;
         width:60%;
         max-height: 600px;
     }
-    .transaction-item {
+    .add-item {
         margin: 5px;
       }
             
 }
 
 @media (max-width:600px) {
-    .transaction-list{
+    .add-list{
         margin: 20px 5px 20px 5px;
         width:100%;
     }
-    .transaction-item {
+    .add-item {
         margin: 5px;
       }
             

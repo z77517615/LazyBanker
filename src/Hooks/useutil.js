@@ -13,3 +13,11 @@ export function getMonth(month = dayjs().month()) {
   });
   return daysMatrix;
 }
+
+export function getWeekday(index){
+  const weeksarray=[]
+  for (let i=index ; index <= i+6 ; index++){
+    weeksarray.push(dayjs().day(index))
+  };
+  return weeksarray
+};

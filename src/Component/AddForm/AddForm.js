@@ -29,9 +29,7 @@ export default function AddForm({ uid, transaction }) {
       });
     }
     if (transactionstate && transactionstate == "update") {
-      // console.log("update1")
       const id = transaction.id;
-      console.log(date);
       setTransactionstate("");
       updateTransaction(
         {
@@ -72,14 +70,19 @@ export default function AddForm({ uid, transaction }) {
       setCategory(transaction.category);
       setTransactionName(transaction.transactionName);
       setAmount(transaction.amount);
+      setEarn(transaction.earn);
       setTransactionstate(true);
     }
   }, [transaction.uuid]);
 
-  function selected(selc) {
-    if (selc == transaction.earn) {
+  function selected(item) {
+    if (item === transaction.earn) {
       return "selected";
-    } else {
+    }
+    else if (item == transaction.category) {
+      return "selected";
+    } 
+    else {
       return "";
     }
   }
@@ -98,32 +101,79 @@ export default function AddForm({ uid, transaction }) {
         <form onSubmit={handleSubmit}>
           <div className="transaction-form">
             <label>
-              <select onChange={(e) => setEarn(e.target.value)}>
-                <option value="Income" selected={selected("Income")}>
-                  Income
-                </option>
+              <select required onChange={(e) => setEarn(e.target.value)}>
+                {earn == "" && (
+                  <option value="" disabled selected hidden>
+                    Income/Expend
+                  </option>
+                )}
                 <option value="Expend" selected={selected("Expend")}>
                   Expend
                 </option>
+                <option value="Income" selected={selected("Income")}>
+                  Income
+                </option>
               </select>
             </label>
-            {/* <label className="smallcalendar-input">
-                <input 
-                  type="date"
-                  required
-                  value={pickday} 
-                  onChange={(e) => setDate(e.target.value)} 
-                  placeholder='DD-MM-YY'
-                />
-              </label> */}
             <label>
-              <input
-                type="text"
-                required
-                onChange={(e) => setCategory(e.target.value)}
-                value={category}
-                placeholder="category"
-              />
+              {earn == "" && (
+                <select>
+                  <option>Category</option>
+                </select>
+              )}
+              {earn == "Expend" && (
+                <select required onChange={(e) => setCategory(e.target.value)}>
+                  <option disabled selected hidden>
+                    Pick Category
+                  </option>
+                  <option value="Food" selected={selected("Food")}>
+                    Food
+                  </option>
+                  <option value="Car" selected={selected("Car")}>
+                    Car
+                  </option>
+                  <option value="Medical" selected={selected("Medical")}>
+                    Medical
+                  </option>
+                  <option value="Loan" selected={selected("Loan")}>
+                    Loan
+                  </option>
+                  <option value="Daily use" selected={selected("Daily use")}>
+                    Daily use
+                  </option>
+                  <option
+                    value="Entertainment"
+                    selected={selected("Entertainment")}
+                  >
+                    Entertainment
+                  </option>
+                  <option value="Child" selected={selected("Child")}>
+                    Child
+                  </option>
+                  <option value="Education" selected={selected("Education")}>
+                    Education
+                  </option>
+                  <option value="Pets" selected={selected("Pets")}>
+                    Pets
+                  </option>
+                  <option value="Others" selected={selected("Others")}>
+                    Others
+                  </option>
+                </select>
+              )}
+              {earn == "Income" && (
+                <select required onChange={(e) => setCategory(e.target.value)}>
+                  <option disabled selected hidden>
+                    Pick Category
+                  </option>
+                  <option value="Salary" selected={selected("Salary")}>
+                    Salary
+                  </option>
+                  <option value="Invest" selected={selected("Invest")}>
+                    Invest
+                  </option>
+                </select>
+              )}
             </label>
             <label>
               <input

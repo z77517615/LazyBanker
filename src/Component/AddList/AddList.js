@@ -9,6 +9,7 @@ export default function AddList({ uid, passTransaction }) {
   const { documents, error } = useCollection(
     "transaction",
     ["uid", "==", uid],
+    "",
     ["createdAt", "desc"]
   );
   const { deleteTransaction, response } = editTransaction("transaction");
@@ -23,11 +24,11 @@ export default function AddList({ uid, passTransaction }) {
   }
 
   return (
-    <div className="transaction-list">
+    <div className="add-list">
       {documents &&
         documents.map((document) => (
           <li
-            className="transaction-item"
+            className="add-item"
             style={borderline(document.earn)}
             key={document.id}
           >

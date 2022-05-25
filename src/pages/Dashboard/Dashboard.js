@@ -1,18 +1,44 @@
 //style
 import "./Dashboard.css"
 import Userbar from '../../Component/Userbar/Userbar'
+import {SideCalendar} from '../../Component/SideCalendar/SideCalendar'
 
 
-import React from "react";
-import { useCollection } from "../../Hooks/useCollection";
+
+import React,{useState} from "react";
 import { useAuthContext } from "../../Hooks/useAuthContext";
-
 import TransactionList from "../../Component/TransactionList/TransactionList";
+import { useCollection } from "../../Hooks/useCollection";
+import { useSelectContext } from "../../Hooks/useSelectContext";
+
+
 
 
 export default function Dashboard (){
+  // const [currentfilter,setCurrentfilter]= useState("transaction")
   const {user} = useAuthContext()
-  const{documents,error} = useCollection('transaction',['uid','==',user.uid])
+  const{date,filter} = useSelectContext()
+
+  
+
+  const { documents, error } = useCollection(
+    "transaction",
+    ["uid", "==", user.uid]
+  );
+  const transaction = documents ? documents.filter(document=>{
+    switch(filter) {
+      case 'all':
+        return true
+      case 'date':
+        let filter = false
+        if (document.date== date){
+          filter = true
+        }
+        return filter
+      }
+    }): null
+
+console.log(transaction)
 
   return (
     <div className="home">
@@ -20,8 +46,8 @@ export default function Dashboard (){
       <div className="chart1">Chart1</div>
       <div className="chart2">Chart2</div>
       <div className="list-container">
-        {error &&{error}}
-        {documents && <TransactionList transactions={documents}/>}
+      <SideCalendar/>
+      <TransactionList documents={transaction}/>
       </div>
     </div>
   );
