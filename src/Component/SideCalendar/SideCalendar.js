@@ -7,19 +7,21 @@ import "./SideCalendar.css";
 import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
 
-export function SideCalendar() {
+export function SideCalendar({filterdate}) {
   const format = "DD-MM-YY";
   const nowday = dayjs().format(format);
 
   const [currentweekindex, setCurrentweekindex] = useState(0);
   const [currentWeek, setCurentWeek] = useState(getWeekday(0));
   const [pickday, setPickday] = useState(dayjs().format(format));
-  const { date, changeDate , changeFilter} = useSelectContext()
+  const { date ,changeDate , changeFilter} = useSelectContext()
 
 
   useEffect(() => {
     setCurentWeek(getWeekday(currentweekindex));
-  }, [currentweekindex]);
+  }, [currentweekindex,filterdate]);
+
+
 
   function handleNextWeek() {
     setCurrentweekindex(currentweekindex + 7);

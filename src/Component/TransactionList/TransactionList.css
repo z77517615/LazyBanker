@@ -4,11 +4,23 @@
 
 .transaction-item{
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 20px;
     border: 1px solid #f2f2f2;
     box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
     padding: 5px;
-    position:relative;
+}
+
+.transaction-item img{
+    margin-right: 5px;
+    width: 70px;
+    height:70px;
+    border-radius: 50%;
+    background-color: rgb(243, 235, 235);
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .transaction-delete{

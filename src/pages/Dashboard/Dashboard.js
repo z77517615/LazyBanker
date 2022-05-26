@@ -15,9 +15,11 @@ import { useSelectContext } from "../../Hooks/useSelectContext";
 
 
 export default function Dashboard (){
-  // const [currentfilter,setCurrentfilter]= useState("transaction")
+  // const [currentfilter,setCurrentfilter]= useState("transaction") 
+
   const {user} = useAuthContext()
   const{date,filter} = useSelectContext()
+  console.log(11111,date,filter)
 
   
 
@@ -38,7 +40,6 @@ export default function Dashboard (){
       }
     }): null
 
-console.log(transaction)
 
   return (
     <div className="home">
@@ -47,7 +48,7 @@ console.log(transaction)
       <div className="chart2">Chart2</div>
       <div className="list-container">
       <SideCalendar/>
-      <TransactionList documents={transaction}/>
+      <TransactionList documents={transaction} />
       </div>
     </div>
   );

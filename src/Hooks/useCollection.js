@@ -15,9 +15,9 @@ const[documents , setDocuments] = useState(null)
         let ref = collection(db , col)
 
         if(refuserquery){
-            console.log(refuserquery)
+            // console.log(refuserquery)
             ref = query(ref , where(...refuserquery))
-            console.log(1,ref)
+            // console.log(1,ref)
         }
         // if(reffilterquery){
         //     console.log(222222)
@@ -27,7 +27,7 @@ const[documents , setDocuments] = useState(null)
         
         if(reforderBy){
             ref = query(ref ,orderBy(...reforderBy))
-            console.log(ref)
+            // console.log(ref)
         }
 
 
@@ -41,7 +41,7 @@ const[documents , setDocuments] = useState(null)
             setDocuments(results)
             setError(null)
         },(error) =>{
-            console.log(error)
+            // console.log(error)
             setError('Could not fetch data from firestore')
         })
 
