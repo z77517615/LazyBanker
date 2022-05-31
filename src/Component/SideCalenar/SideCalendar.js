@@ -6,22 +6,20 @@ import "./SideCalendar.css";
 
 import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
+import {Spend} from "../../Hooks/useSum"
 
-export function SideCalendar({filterdate}) {
+export function SideCalendar({ documents }) {
   const format = "DD-MM-YY";
   const nowday = dayjs().format(format);
 
   const [currentweekindex, setCurrentweekindex] = useState(0);
   const [currentWeek, setCurentWeek] = useState(getWeekday(0));
   const [pickday, setPickday] = useState(dayjs().format(format));
-  const { date ,changeDate , changeFilter} = useSelectContext()
-
+  const { date, changeDate, changeFilter } = useSelectContext();
 
   useEffect(() => {
     setCurentWeek(getWeekday(currentweekindex));
-  }, [currentweekindex,filterdate]);
-
-
+  }, [currentweekindex]);
 
   function handleNextWeek() {
     setCurrentweekindex(currentweekindex + 7);
@@ -49,7 +47,7 @@ export function SideCalendar({filterdate}) {
     }
     if (pickday === currtDay) {
       // passpickday(pickday);
-      return { background: "#0c6109", color: "white" };
+      return { background: "rgb(130, 231, 114)", color: "white" };
     }
   }
 
@@ -79,16 +77,20 @@ export function SideCalendar({filterdate}) {
           <span key={i}>{element}</span>
         ))}
         {currentWeek.map((day, i) => (
-          <button
-            key={i}
-            className="weekdays"
-            style={getDayClass(day)}
-            onClick={() => ((setPickday(day.format(format))),
-                            changeDate(day.format(format)),
-                            changeFilter("date"))}
-          >
-            {day.format("D")}
-          </button>
+          <div key={i} className="weekdays-container">
+            <button
+              className="weekdays"
+              style={getDayClass(day)}
+              onClick={() => (
+                setPickday(day.format(format)),
+                changeDate(day.format(format)),
+                changeFilter("date")
+              )}
+            >
+              {day.format("D")}
+            </button>
+            {<div id="total">{documents && Spend(day,documents)}</div>}
+          </div>
         ))}
       </main>
     </div>

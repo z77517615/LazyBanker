@@ -50,7 +50,6 @@ export const editTransaction = (col) => {
         try{
             const createdAt = serverTimestamp()
             const addTransaction = await addDoc(ref,{...doc,createdAt})
-            console.log(addTransaction)
             dispatchIfNotCancelled({type:"ADDED_TRANSACTION" , payload : addTransaction})
         }
         catch(err){
@@ -73,10 +72,8 @@ export const editTransaction = (col) => {
     const updateTransaction = async (transaction,id) =>{
         dispatch({type:"IS_PENDING"})
         try{
-            console.log("update2")
             console.log(id)
             const docRf = doc(db , col , id)
-            console.log("update3")
             const updateTransaction = await updateDoc(docRf,{...transaction})
             dispatchIfNotCancelled({type:"UPDATE_TRANSACTION" , payload : updateTransaction})
         }

@@ -1,24 +1,27 @@
 import React, {useState,useEffect,useRef} from "react";
 
 import { db } from '../firebase/config';
-import { doc, collection ,serverTimestamp,onSnapshot, query , where , orderBy} from "firebase/firestore";
+import { doc, collection ,serverTimestamp , onSnapshot, query , where , orderBy} from "firebase/firestore";
+
 
 export const useCollection = (col , _userquery, _orderBy ) => {
 const[error , setError] = useState(null)
 const[documents , setDocuments] = useState(null)
 
     //chang array to ref,prevent useEffct fire loop
-    const refuserquery = useRef(_userquery).current
-    // const reffilterquery = useRef(_filterquery).current
+    const query1 = useRef(_userquery).current
+    // const filter = useRef(_filter).current
+
     const reforderBy = useRef(_orderBy).current
+    
     useEffect(()=>{  
         let ref = collection(db , col)
-
-        if(refuserquery){
-            // console.log(refuserquery)
-            ref = query(ref , where(...refuserquery))
-            // console.log(1,ref)
+        if(query1){
+            ref = query(ref , where(...query1))
         }
+        // if(filter){
+        //     ref = query(ref , where(...filter))
+        // }
         // if(reffilterquery){
         //     console.log(222222)
         //     ref = query(ref , where(...reffilterquery))
@@ -41,7 +44,6 @@ const[documents , setDocuments] = useState(null)
             setDocuments(results)
             setError(null)
         },(error) =>{
-            // console.log(error)
             setError('Could not fetch data from firestore')
         })
 

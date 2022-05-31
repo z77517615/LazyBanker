@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import React,{useState} from 'react'
 
 export const useGetdaycolor = (day) => {

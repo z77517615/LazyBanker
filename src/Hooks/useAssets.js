@@ -1,7 +1,7 @@
 import Medical from "../assets/Medical.png";
 import Car from "../assets/Car.png";
 import Child from "../assets/Child.png";
-import Daliy from "../assets/Daliy.png";
+import Daily from "../assets/Daliy.png";
 import Education from "../assets/Education.png";
 import Food from "../assets/Food.png";
 import Investment from "../assets/Investment.png";
@@ -9,13 +9,16 @@ import Loan from "../assets/Loan.png";
 import Pets from "../assets/Pets.png";
 import Salary from "../assets/Salary.png";
 import Entertainment from "../assets/Entertainment.png";
+import Others from "../assets/Others.png";
+import Travel from "../assets/Travel.png";
+import Gifts from "../assets/Gifts.png";
 
 export function icon(category) {
   let img = [
     Medical,
     Car,
     Child,
-    Daliy,
+    Daily,
     Education,
     Food,
     Investment,
@@ -23,12 +26,15 @@ export function icon(category) {
     Pets,
     Salary,
     Entertainment,
+    Travel,
+    Gifts,
+    Others
   ];
   let icons = [
     "Medical",
     "Car",
     "Child",
-    "Daliy use",
+    "Daily use",
     "Education",
     "Food",
     "Investment",
@@ -36,6 +42,9 @@ export function icon(category) {
     "Pets",
     "Salary",
     "Entertainment",
+    "Travel",
+    "Gifts",
+    "Others"
   ];
 
   const picimg = icons.map((title, idx) => {

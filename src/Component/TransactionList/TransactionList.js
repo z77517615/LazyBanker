@@ -1,8 +1,18 @@
-import React from "react";
-import { icon } from "../../Hooks/useAssets";
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import "./TransactionList.css";
+import AddForm from "../../Component/AddForm/AddForm";
+import { icon } from "../../Hooks/useAssets";
+import Delete from "../../assets/delete.png";
+import Edit from "../../assets/edit.png";
+
+import { editTransaction } from "../../Hooks/useTransaction";
+import { useAuthContext } from "../../Hooks/useAuthContext";
+import { useSelectContext } from "../../Hooks/useSelectContext";
 
 export default function TransactionList({ documents }) {
+  const { deleteTransaction, response } = editTransaction("transaction");
   function background(category) {
     if (category == "Food") {
       return { background: "#FAEBD7" };
@@ -37,7 +47,21 @@ export default function TransactionList({ documents }) {
     if (category == "Entertainment") {
       return { background: "#AFEEEE" };
     }
+    if (category == "Travel") {
+      return { background: "#87CEEB" };
+    }
+    if (category == "Gifts") {
+      return { background: "#FF6347" };
+    }
+    if (category == "Others") {
+      return { background: "#FF6347" };
+    }
   }
+  const [popup, setPopup] = useState(false);
+  const { user } = useAuthContext();
+  const [transaction, setTransaction] = useState("");
+  const uuid = uuidv4();
+  const [popupstyle, setPopupstyle] = useState(false);
 
   return (
     <div className="transaction-list">
@@ -51,27 +75,41 @@ export default function TransactionList({ documents }) {
             <div>
               <img src={icon(document.category)}></img>
             </div>
-            <div>
+            <div className="transaction-item__list">
               <p>{document.date}</p>
               <p>
                 {document.category} : ${document.amount}
               </p>
-              <p>{document.transactionName}</p>
-              <button
-                className="edit"
-                onClick={() => edittransaction(document.id)}
-              >
-                Edit
-              </button>
-              <button
-                className="delete"
-                onClick={() => delettransaction(document.id)}
-              >
-                Delete
-              </button>
+              <p>Name : {document.transactionName}</p>
             </div>
+            <button
+              className="transaction-item__list_edit"
+              onClick={() => (
+                setPopup(true),
+                setPopupstyle(true),
+                setTransaction({ ...document, uuid: uuidv4() })
+              )}
+            >
+              <img className="transaction-edit" src={Edit} />
+            </button>
+            <button
+              className="transaction-item__list_delete"
+              onClick={() => deleteTransaction(document.id)}
+            >
+              <img className="transaction-delete" src={Delete} />
+            </button>
           </div>
         ))}
+      {popup && (
+        <AddForm
+          uid={user.uid}
+          transaction={transaction}
+          popup={popup}
+          setPopup={setPopup}
+          popupstyle={popupstyle}
+          setPopupstyle={setPopupstyle}
+        />
+      )}
     </div>
   );
 }
