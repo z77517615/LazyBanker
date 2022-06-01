@@ -220,8 +220,8 @@ export default function AddForm({
                     <option value="Gifts" selected={selected("Gifts")}>
                       Gifts
                     </option>
-                    <option value="Invest" selected={selected("Invest")}>
-                      Invest
+                    <option value="Investment" selected={selected("Investment")}>
+                      Investment
                     </option>
                   </select>
                 )}

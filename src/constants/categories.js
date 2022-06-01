@@ -1,4 +1,4 @@
-const incomeColors = ["#028838", "#21c65b", "#52d37f"];
+const incomeColors = ["#028838", "#13a446", "#63d98c"];
 const expenseColors = [
   "#70050c",
   "#a10813",
@@ -6,15 +6,15 @@ const expenseColors = [
   "#f91121",
   "#ed5938",
   "#ee8269",
-  "#f18a4e",
-  "#eca57c",
-  "#ecb13c",
-  "#f2a305",
-  "#f27f05",
+  "#f14e9d",
+  "#f88080",
+  "#ec3c3c",
+  "#f28f05",
+  "#bf4203",
 ];
 
 export const incomeCategories = [
-  { type: "Investments", amount: 0, color: incomeColors[0] },
+  { type: "Investment", amount: 0, color: incomeColors[0] },
   { type: "Gifts", amount: 0, color: incomeColors[1] },
   { type: "Salary", amount: 0, color: incomeColors[2] },
 ];

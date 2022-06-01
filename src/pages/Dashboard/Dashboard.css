@@ -46,11 +46,13 @@
   padding: 10px;
 }
 
+
+
 @media (max-width: 1200px) {
   .Barchart-container {
     flex-wrap: wrap;
   }
   .Chart-container_chart {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
