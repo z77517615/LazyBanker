@@ -28,7 +28,7 @@ export function icon(category) {
     Entertainment,
     Travel,
     Gifts,
-    Others
+    Others,
   ];
   let icons = [
     "Medical",
@@ -44,7 +44,7 @@ export function icon(category) {
     "Entertainment",
     "Travel",
     "Gifts",
-    "Others"
+    "Others",
   ];
 
   const picimg = icons.map((title, idx) => {

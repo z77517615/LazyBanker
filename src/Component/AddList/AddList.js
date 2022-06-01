@@ -1,16 +1,17 @@
 import "./AddList.css";
 
-import React from "react";
+import React, { useState } from "react";
 import { useCollection } from "../../Hooks/useCollection";
 import { editTransaction } from "../../Hooks/useTransaction";
 import { v4 as uuidv4 } from "uuid";
 
 export default function AddList({ uid, passTransaction }) {
+  const [limitnumber, setLimitnumber] = useState("10");
   const { documents, error } = useCollection(
     "transaction",
     ["uid", "==", uid],
-    "",
-    ["createdAt", "desc"]
+    ["createdAt", "desc"],
+    parseInt(limitnumber)
   );
   const { deleteTransaction, response } = editTransaction("transaction");
   const uuid = uuidv4();
@@ -22,9 +23,18 @@ export default function AddList({ uid, passTransaction }) {
       return { borderLeft: "4px solid #1f9751" };
     }
   }
-
   return (
     <div className="add-list">
+      <nav className="add-list_filter">
+        <span>Display number of lists : </span>
+        <select required onChange={(e) => setLimitnumber(e.target.value)}>
+          <option value="10" selected>
+            10
+          </option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+        </select>
+      </nav>
       {documents &&
         documents.map((document) => (
           <li

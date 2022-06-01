@@ -1,20 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 /* base styles */
 body {
-  font-family: 'Varela Round', sans-serif;
+  font-family: "Varela Round", sans-serif;
   margin: 0;
   font-size: 1.1em;
   overflow-x: hidden;
   position: relative;
+  max-height: fit-content;
 }
 
-ul, li, p, h1, h2, h3, h4 {
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
 
-ul,li {
+ul,
+li {
   list-style-type: none;
 }
 
@@ -34,8 +42,8 @@ ul,li {
   color: #fff;
 }
 
-.signup-form ,
-.login-form{
+.signup-form,
+.login-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 20px;
@@ -43,7 +51,7 @@ ul,li {
   border: #90ccc2 solid 4px;
 }
 
-.error{
+.error {
   color: red;
   background: pink;
   border: 3px solid red;
@@ -52,9 +60,8 @@ ul,li {
   margin: 10px 0;
 }
 
-
 @media screen and(max-width:600px) {
-  .container{
-      width:100%
+  .container {
+    width: 100%;
   }
 }

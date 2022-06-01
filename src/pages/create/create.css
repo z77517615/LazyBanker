@@ -1,19 +1,17 @@
-.list center{
-    display:flex;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-    max-width: 1200px;
-    margin:0 auto;
+.list center {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.list{
-    width:100%;
+.list {
+  width: 100%;
 }
 
-
-@media (max-width:1200px) {
-    .center{
-        width:80%;
-    }
-
+@media (max-width: 1200px) {
+  .center {
+    width: 80%;
+  }
 }

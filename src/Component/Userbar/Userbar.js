@@ -18,7 +18,9 @@ export default function Userbar() {
               <p>Welcome to create your own Financial Tracker</p>
             </div>
             <Link to="/create">
-              <span className="shopping-container"><img className="shopping" src={shopping} /></span>
+              <span className="shopping-container">
+                <img className="shopping" src={shopping} />
+              </span>
             </Link>
           </>
         )}

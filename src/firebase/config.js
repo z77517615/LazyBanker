@@ -2,8 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-import { getStorage  } from "firebase/storage";
-
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,20 +11,19 @@ const firebaseConfig = {
   projectId: "lazybanker-webpack",
   storageBucket: "lazybanker-webpack.appspot.com",
   messagingSenderId: "161480656224",
-  appId: "1:161480656224:web:37f0e932f5842b87d14a05"
+  appId: "1:161480656224:web:37f0e932f5842b87d14a05",
 };
 
 // init firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
 // init firestore
-const db  = getFirestore(firebaseApp)
+const db = getFirestore(firebaseApp);
 
 // init fireauth
-const auth  = getAuth(firebaseApp)
+const auth = getAuth(firebaseApp);
 
 //init firestorage
 const storage = getStorage(firebaseApp);
 
-
-export {db , auth ,storage }
+export { db, auth, storage };

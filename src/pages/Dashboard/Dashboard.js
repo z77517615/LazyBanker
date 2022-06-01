@@ -25,7 +25,6 @@ export default function Dashboard() {
     "==",
     user.uid,
   ]);
-  const [popup, setPopup] = useState(false);
 
   const transaction = documents
     ? documents.filter((document) => {
@@ -46,23 +45,12 @@ export default function Dashboard() {
     <div className="home">
       <Userbar />
       <main className="Chart-container">
-        <div className="">
-          <section className="Barchart-container">
-            {documents && (
-              <DounutChart
-                className="DounutChart"
-                title1="Income"
-                documents={documents}
-              />
-            )}
-            {documents && (
-              <DounutChart
-                title1="Expend"
-                documents={documents}
-              />
-            )}
+        <div className="Chart-container_chart">
+          <section className="Dounutchart-container">
+            {documents && <DounutChart title1="Income" documents={documents} />}
+            {documents && <DounutChart title1="Expend" documents={documents} />}
           </section>
-          <section>
+          <section className="Barchart-container">
             {documents && (
               <BarChart title1="Income" title2="Expend" documents={documents} />
             )}

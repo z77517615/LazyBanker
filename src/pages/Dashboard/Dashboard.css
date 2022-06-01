@@ -1,34 +1,56 @@
-.home{
-    max-width:1200px;
-    margin:10px auto;
-    max-height:fit-content;
-    /* justify-content: center; */
+.home {
+  max-width: 1200px;
+  margin: 10px auto;
+  max-height: fit-content;
+  overflow-x: hidden;
+  /* justify-content: center; */
 }
-.Chart-container{
-    display:flex;
+.Chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  max-height: fit-content;
+}
+
+.Chart-container_chart {
+  max-width: 1000px;
+  padding: 10px;
+  margin: 0px auto;
+  position: relative;
+  max-height: fit-content;
+}
+
+.Dounutchart-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px auto 5px 0px;
+  /* justify-content: center; */
+  max-width: 800px;
+}
+
+.Barchart-container {
+  /* max-height:fit-content; */
+  position: relative;
+  margin: 5px auto 5px 0px;
+  justify-content: center;
+  height: 300px;
+  overflow-x: scroll;
+  max-width: 800px;
+}
+
+.list-container {
+  height: 100vh;
+  width: 360px;
+  max-height: fit-content;
+  margin: 5px auto;
+  padding: 10px;
+}
+
+@media (max-width: 1200px) {
+  .Barchart-container {
     flex-wrap: wrap;
-}
-
-.Barchart-container{
-    display: flex;
-    /* max-height:fit-content; */
-    margin: 5px auto 5px 0px;
-    justify-content: center;
-}
-
-.list-container{
-    height:100vh;
-    width: 360px;
-    max-height:fit-content;
-    margin: 5px 0px 5px auto;
-    padding:10px;
-
-
-}
-
-@media (max-width:1200px){
-    .Barchart-container{
-       flex-wrap: wrap;
-    }
-
+  }
+  .Chart-container_chart {
+    max-width: 80%;
+  }
 }

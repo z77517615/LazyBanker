@@ -1,73 +1,71 @@
-.transaction-list{
-    margin-top: 20px;
+.transaction-list {
+  margin-top: 20px;
+  max-height: 70vh;
+  overflow-y: scroll;
 }
 
-.transaction-item{
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    border: 1px solid #f2f2f2;
-    box-shadow: 3px 3px 5px rgba(50,50,50,0.1);
-    padding: 5px;
-    position: relative;
+.transaction-item {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+  padding: 5px;
+  position: relative;
 }
 
-.transaction-item img{
-    margin-left: 10px;
-    margin-right: 5px;
-    width: 70px;
-    height:70px;
-    border-radius: 50%;
-    background-color: rgb(243, 235, 235);
-    padding: 10px;
-    box-sizing: border-box;
+.transaction-item img {
+  margin-left: 10px;
+  margin-right: 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(243, 235, 235);
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.transaction-item__list{
-    margin-left:15px;
+.transaction-item__list {
+  margin-left: 15px;
 }
 
-img.transaction-delete{
-    position:absolute;
-    width:40px;
-    height:40px;
-    right:-5px;
-    top:-5px;
-    background: none;
-    border:none;
-    /* border-radius: none; */
-    cursor: pointer;
+img.transaction-delete {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: -5px;
+  top: -5px;
+  background: none;
+  border: none;
+  /* border-radius: none; */
+  cursor: pointer;
 }
 
-
-img.transaction-edit{
-    position:absolute;
-    width:40px;
-    height:40px;
-    right:20px;
-    top:-5px;
-    background: none;
-    border:none;
-    /* border-radius: none; */
-    cursor: pointer;
+img.transaction-edit {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: -5px;
+  background: none;
+  border: none;
+  /* border-radius: none; */
+  cursor: pointer;
 }
-.transaction-delete:active
-.transaction-edit:active{
-    color: #d61818;
-    background: none;
-    border:none;
+.transaction-delete:active .transaction-edit:active {
+  color: #d61818;
+  background: none;
+  border: none;
 }
 
-.transaction-item__list_delete
-.transaction-item__list_edit{
-    background: none;
-    border: none;
+.transaction-item__list_delete .transaction-item__list_edit {
+  background: none;
+  border: none;
 }
 
 .transaction-item__list_delete,
-.transaction-item__list_edit{
-    background: none;
-    border: none;
+.transaction-item__list_edit {
+  background: none;
+  border: none;
 }
-

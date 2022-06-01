@@ -6,10 +6,10 @@ import "./SideCalendar.css";
 
 import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
-import {Spend} from "../../Hooks/useSum"
+import { Spend } from "../../Hooks/useSum";
 
 export function SideCalendar({ documents }) {
-  const format = "DD-MM-YY";
+  const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 
   const [currentweekindex, setCurrentweekindex] = useState(0);
@@ -89,7 +89,7 @@ export function SideCalendar({ documents }) {
             >
               {day.format("D")}
             </button>
-            {<div id="total">{documents && Spend(day,documents)}</div>}
+            {<div id="total">{documents && Spend(day, documents)}</div>}
           </div>
         ))}
       </main>

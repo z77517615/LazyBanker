@@ -6,14 +6,12 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useAuthContext } from "./Hooks/useAuthContext";
 
-
 //pages
 import Dashboard from "./pages/Dashboard/Dashboard.js";
 import Login from "./pages/login/login.js";
 import Signup from "./pages/signup/signup.js";
 import Create from "./pages/create/create.js";
 import Navbar from "./Component/Navbar/Navbar";
-
 
 function App() {
   const { authIsReady, user } = useAuthContext();
