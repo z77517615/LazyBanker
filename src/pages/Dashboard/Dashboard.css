@@ -1,10 +1,13 @@
+
 .home {
   max-width: 1200px;
   margin: 10px auto;
   max-height: fit-content;
   overflow-x: hidden;
+  margin-top:-3px;  
   /* justify-content: center; */
 }
+
 .Chart-container {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +17,7 @@
 
 .Chart-container_chart {
   max-width: 1000px;
-  padding: 10px;
+  padding: 5px;
   margin: 0px auto;
   position: relative;
   max-height: fit-content;
@@ -42,11 +45,9 @@
   height: 100vh;
   width: 360px;
   max-height: fit-content;
-  margin: 5px auto;
+  margin: 3px auto;
   padding: 10px;
 }
-
-
 
 @media (max-width: 1200px) {
   .Barchart-container {

@@ -48,7 +48,8 @@ li {
   margin: 60px auto;
   padding: 20px;
   border-radius: 3px;
-  border: #90ccc2 solid 4px;
+  border:#1f7f97 solid 4px;
+  background-color: #eef8fb;
 }
 
 .error {
@@ -58,6 +59,13 @@ li {
   border-radius: 4px;
   padding: 8px;
   margin: 10px 0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and(max-width:600px) {

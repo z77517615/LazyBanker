@@ -1,23 +1,22 @@
-.chart-filter {
+.cbarchart-filter {
     margin: 5px auto;
   }
 
-  .chart-filter nav {
+  .barchart-filter nav {
     display: flex;
-
     margin-left: 30px;
     padding: 10px;
     border-radius: 10px;
     align-items: center;
   }
 
-  .chart-filter p {
+  .barchart-filter p {
     font-size: 20px;
     color:blue;
     font-weight:bold;
     margin-right: 10px;
   }
-  .chart-filter button {
+  .barchart-filter button {
     margin-right:5px;
     font-size: 16px;
     font-weight: bold;
@@ -29,11 +28,11 @@
     border-radius: 0px;
   }
 
-  .chart-filter button.active {
+  .barchart-filter button.active {
     color: red;
   } 
 
-  .chart-filter button:hover {
+  .barchart-filter button:hover {
     color:red;
     border-right: 2px solid #ede7e7;
     background: none;

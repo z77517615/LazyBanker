@@ -6,6 +6,7 @@ import left from "../../assets/left.png";
 import { getMonth } from "../../Hooks/useutil";
 import styles from "./SmallCalendar.module.css";
 
+
 export function SmallCalendar({ passpickday, selc, setSelc }) {
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
@@ -13,10 +14,11 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
   const [currentMonthIndex, setCurrentIMonthIndex] = useState(dayjs().month());
   const [currentMonth, setCurentMonth] = useState(getMonth());
   const [pickday, setPickday] = useState(dayjs().format(format));
-  // console.log(currentMonth[0])
+// console.log(currentMonth[0])
   useEffect(() => {
     setCurentMonth(getMonth(currentMonthIndex));
   }, [currentMonthIndex]);
+
 
   function handlePrevMonth() {
     setCurrentIMonthIndex(currentMonthIndex - 1);
@@ -28,7 +30,6 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
   function getDayClass(day) {
     const currtDay = day.format(format);
     if (nowday === currtDay) {
-      passpickday(pickday);
       return `${styles.currentDay}`;
     }
     if (selc && pickday === currtDay) {
@@ -65,6 +66,7 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
                 key={idx}
                 className={`${styles.days} ${getDayClass(day)}`}
                 onClick={() => (setSelc(true), setPickday(day.format(format)))}
+
               >
                 <span>{day.format("D")}</span>
               </button>

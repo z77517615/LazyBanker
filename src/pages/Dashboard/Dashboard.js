@@ -12,13 +12,17 @@ import { DounutChart } from "../../Component/Chart/DounutChart";
 import { BarChart } from "../../Component/Chart/BarChart";
 import TransactionList from "../../Component/TransactionList/TransactionList";
 import Filter from "./Filter";
+import Barchartfilter from "./Barchartfilter";
 import Userbar from "../../Component/Userbar/Userbar";
 
 export default function Dashboard() {
   const { user } = useAuthContext();
   const { date, filter } = useSelectContext();
   const [chartfilter, setChartfilter] = useState("30days");
+  const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
+  const [startyear, setStartyear] = useState("");
+  const [endyear, setEndyear] = useState("");
   const { documents, error } = useCollection("transaction", [
     "uid",
     "==",
@@ -26,6 +30,14 @@ export default function Dashboard() {
   ]);
   const format = "YYYY-MM-DD";
   const today = new Date(dayjs().format(format));
+
+  const changeFilter = (newFilter) => {
+    setChartfilter(newFilter);
+  };
+
+  const changeBarFilter = (newBarFilter) => {
+    setBarChartfilter(newBarFilter);
+  };
 
   useEffect(() => {
     if (chartfilter == "30days") {
@@ -46,9 +58,38 @@ export default function Dashboard() {
     }
   }, [chartfilter]);
 
-  const changeFilter = (newFilter) => {
-    setChartfilter(newFilter);
-  };
+  useEffect(() => {
+    if (barChartfilter == "this year") {
+      setStartyear(new Date(new Date().getFullYear(), 0, 1));
+      setEndyear(new Date(new Date().getFullYear(), 0, 365));
+      return;
+    }
+    if (barChartfilter == "last year") {
+      setStartyear(new Date(new Date().getFullYear(), -12, 1));
+      setEndyear(new Date(new Date().getFullYear(), -12, 365));
+      return;
+    }
+    if (barChartfilter == "the year before") {
+      setStartyear(new Date(new Date().getFullYear(), -24, 1));
+      setEndyear(new Date(new Date().getFullYear(), -24, 365));
+      return;
+    }
+  }, [barChartfilter]);
+
+  const filterdocumnts = documents
+    ? documents.filter((t) => {
+        var date = new Date(t.date);
+        return date >= startday && date <= today;
+      })
+    : null;
+
+  const barfilterdocumnts = documents
+    ? documents.filter((t) => {
+        var date = new Date(t.date);
+        return date >= startyear && date <= endyear;
+      })
+    : null;
+  console.log(barfilterdocumnts);
 
   const transaction = documents
     ? documents.filter((document) => {
@@ -62,13 +103,6 @@ export default function Dashboard() {
             }
             return filter;
         }
-      })
-    : null;
-
-  const filterdocumnts = documents
-    ? documents.filter((t) => {
-        var date = new Date(t.date);
-        return date >= startday && date <= today;
       })
     : null;
 
@@ -87,15 +121,23 @@ export default function Dashboard() {
                 <DounutChart title1="Expend" documents={filterdocumnts} />
               )}
             </section>
-            <section className="Barchart-container">
+
+            <div>
               {documents && (
-                <BarChart
-                  title1="Income"
-                  title2="Expend"
-                  documents={documents}
-                />
+                <Barchartfilter changeBarFilter={changeBarFilter} />
               )}
-            </section>
+            </div>
+            <div>
+              <section className="Barchart-container">
+                {barfilterdocumnts && (
+                  <BarChart
+                    title1="Income"
+                    title2="Expend"
+                    documents={barfilterdocumnts}
+                  />
+                )}
+              </section>
+            </div>
           </div>
         </div>
         <section className="list-container">
