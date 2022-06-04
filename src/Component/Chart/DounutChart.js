@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef,useEffect,useState } from "react";
 import "./DounutChart.css";
 import {
   Doughnut,
@@ -19,7 +19,17 @@ import { useChart } from "../../Hooks/useChart";
 
 export const DounutChart = ({ title1, documents }) => {
   const { total, DounutData } = useChart(title1, documents);
+  const [emptyarray ,setEmptyarray] = useState(false)
   const chartRef = useRef();
+
+  useEffect(()=>{
+    if (DounutData.labels.length == "0"){
+      setEmptyarray(true)
+    }
+    else{
+      setEmptyarray(false)
+    }
+  },[DounutData])
 
   // const onclick = (event) => {
   //   var activepoints=getElementsAtEvent(chartRef.current, event);
@@ -35,12 +45,13 @@ export const DounutChart = ({ title1, documents }) => {
       <header className="title">{title1} </header>
       <main>
         <div style={{ fontWeight: "h5" }}>${total}</div>
-        <Doughnut
+        {emptyarray && <div className="emptyarray">Please entry your first Transaction</div>}
+        {!emptyarray &&<Doughnut
           data={DounutData}
           ref={chartRef}
           width={300}
           // onClick={onclick}
-        />
+        />}
       </main>
     </div>
   );

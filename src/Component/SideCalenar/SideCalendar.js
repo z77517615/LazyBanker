@@ -8,14 +8,14 @@ import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
 import { Spend } from "../../Hooks/useSum";
 
-export function SideCalendar({ documents }) {
+export function SideCalendar({ documents,getDayClass }) {
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 
   const [currentweekindex, setCurrentweekindex] = useState(0);
   const [currentWeek, setCurentWeek] = useState(getWeekday(0));
   const [pickday, setPickday] = useState(dayjs().format(format));
-  const { date, changeDate, changeFilter } = useSelectContext();
+  const { changeDate} = useSelectContext();
 
   useEffect(() => {
     setCurentWeek(getWeekday(currentweekindex));
@@ -82,9 +82,7 @@ export function SideCalendar({ documents }) {
               className="weekdays"
               style={getDayClass(day)}
               onClick={() => (
-                setPickday(day.format(format)),
-                changeDate(day.format(format)),
-                changeFilter("date")
+                setPickday(day.format(format)), changeDate(day.format(format))
               )}
             >
               {day.format("D")}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef,useEffect,useState} from "react";
 import "./BarChart.css";
 import { Bar } from "react-chartjs-2";
 import {
@@ -9,7 +9,6 @@ import {
   Title,
   Tooltip,
   Legend,
-  defaults,
 } from "chart.js";
 
 ChartJS.register(
@@ -25,8 +24,14 @@ import { useChart } from "../../Hooks/useChart";
 
 export const BarChart = ({ title1, documents, title2 }) => {
   const { BarData } = useChart(title1, documents, title2);
+  // const [emptyarray ,setEmptyarray] = useState(false)
   const chartRef = useRef();
 
+  // useEffect(()=>{
+  //   if (documents =="null"){
+  //     setEmptyarray(true)
+  //   }
+  // },[])
   // const onclick = (event) => {
   //   var activepoints=getElementsAtEvent(chartRef.current, event);
   //   if(activepoints.length > 0){
@@ -37,7 +42,7 @@ export const BarChart = ({ title1, documents, title2 }) => {
   // }
   return (
     <div>
-      {/* <header className="title">{title} </header> */}
+      {/* {emptyarray && <div>Please entry your first Transaction</div>} */}
       <main className="Bar">
         {/* <div style={{fontWeight:"h5"}}>${total}</div> */}
         <Bar

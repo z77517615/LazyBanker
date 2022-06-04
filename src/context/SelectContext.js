@@ -6,11 +6,9 @@ export const SelectContext = createContext();
 const selectReducer = (state, action) => {
   switch (action.type) {
     case "CHANGE_DATE":
-      return { ...state, date: action.payload };
-    case "CHANGE_CATEGORY":
-      return { ...state, category: action.payload };
-    case "CHANGE_FILTER":
-      return { ...state, filter: action.payload };
+      return { ...state , filter: "date", date: action.payload };
+    case "CHANGE_ACCOUNT":
+      return { ...state , filter:"account", account: action.payload };
   }
 };
 
@@ -20,18 +18,20 @@ export function SelectProvider({ children }) {
   const [state, dispatch] = useReducer(selectReducer, {
     filter: "date",
     date: nowday,
+    account:""
   });
 
   const changeDate = (date) => {
     dispatch({ type: "CHANGE_DATE", payload: date });
   };
 
-  const changeFilter = (filter) => {
-    dispatch({ type: "CHANGE_FILTER", payload: filter });
+  const changeAccount = (account) => {
+    dispatch({ type: "CHANGE_ACCOUNT", payload: account });
   };
 
+
   return (
-    <SelectContext.Provider value={{ ...state, changeDate, changeFilter }}>
+    <SelectContext.Provider value={{ ...state, changeDate,changeAccount }}>
       {children}
     </SelectContext.Provider>
   );

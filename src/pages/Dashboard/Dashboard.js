@@ -17,7 +17,7 @@ import Userbar from "../../Component/Userbar/Userbar";
 
 export default function Dashboard() {
   const { user } = useAuthContext();
-  const { date, filter } = useSelectContext();
+  const { date, filter,account } = useSelectContext();
   const [chartfilter, setChartfilter] = useState("30days");
   const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
@@ -89,22 +89,26 @@ export default function Dashboard() {
         return date >= startyear && date <= endyear;
       })
     : null;
-  console.log(barfilterdocumnts);
 
   const transaction = documents
     ? documents.filter((document) => {
         switch (filter) {
-          case "all":
-            return true;
           case "date":
             let filter = false;
             if (document.date == date) {
               filter = true;
             }
             return filter;
+          case "account":
+            let accountfilter = false;
+            if (document.amount == account) {
+              accountfilter = true;
+            }
+            return accountfilter;
         }
       })
     : null;
+
 
   return (
     <div className="home">

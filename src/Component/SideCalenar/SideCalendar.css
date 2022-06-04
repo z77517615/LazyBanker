@@ -81,3 +81,45 @@ div.Sidecalendar {
   right: 0px;
   color: rgb(226, 201, 57);
 }
+
+.search-container{
+  display: flex;
+  max-width: 480px;
+  max-height:20px;
+  border: rgb(197, 199, 201) solid 2px;
+  border-radius: 30px;
+  background-color:rgba(234, 234, 234, 0.2);
+  align-items: center;
+  padding:5px
+}
+
+.search-container input{
+  background:transparent;
+  border: none;
+  background-color: none;
+  outline: none;
+  color:#cbcbd0
+}
+
+::placeholder{
+  color:#cbcbd0
+}
+
+.search-container button img{
+  width:25px;
+}
+
+.search-container button{
+  border:0;
+  border-radius: 50%;
+  width:35px;
+  height:35px;
+  padding: 0;
+}
+
+/* .search-container button:active,
+.search-container button img:active{
+  /* border:0; */
+  /* background:none; */
+  
+/* }  */
