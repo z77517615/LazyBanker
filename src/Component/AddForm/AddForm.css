@@ -66,6 +66,7 @@ button:active {
   background-color: rgb(245, 245, 245);
   /* background-size:contain; */
   width: 35%;
+  z-index: 999;
 }
 
 @media (max-width: 1199px) {

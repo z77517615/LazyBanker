@@ -1,6 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./DounutChart.css";
 import Chart from "react-apexcharts";
+
 // import {
 //   Doughnut,
 //   getElementsAtEventForMode,
@@ -21,7 +22,6 @@ import { useChart } from "../../Hooks/useChart";
 export const DounutChart = ({ title1, documents }) => {
   const { total, DounutData } = useChart(title1, documents);
   const [emptyarray, setEmptyarray] = useState(false);
-  const chartRef = useRef();
 
   useEffect(() => {
     if (DounutData.labels.length == "0") {

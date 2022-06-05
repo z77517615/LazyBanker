@@ -18,12 +18,11 @@ import Userbar from "../../Component/Userbar/Userbar";
 export default function Dashboard() {
   const { user } = useAuthContext();
   const { date, filter, account } = useSelectContext();
-  const [chartfilter, setChartfilter] = useState("30days");
+  const [chartfilter, setChartfilter] = useState("this month");
   const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
   const [startyear, setStartyear] = useState("");
   const [endyear, setEndyear] = useState("");
-  const [checkdoc, setCheckdoc] = useState("");
   const { documents, error } = useCollection("transaction", [
     "uid",
     "==",
@@ -41,6 +40,10 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
+    if (chartfilter == "this month") {
+      setStartday(new Date(dayjs().date(1).format(format)));
+      return;
+    }
     if (chartfilter == "30days") {
       setStartday(new Date(dayjs().subtract(30, "day").format(format)));
       return;
@@ -112,7 +115,7 @@ export default function Dashboard() {
 
   return (
     <div className="home">
-      <Userbar checkdoc={checkdoc} />
+      <Userbar />
       <main className="Chart-container">
         <div className="Chart-container_chart">
           <div>{documents && <Filter changeFilter={changeFilter} />}</div>

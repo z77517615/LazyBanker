@@ -100,10 +100,12 @@ export const useChart = (title1, documents, title2) => {
   series: [{
     name: 'Income',
     type: 'column',
+    color:"#7FFFD4",
     data: Incomemon.map((c) => c.amount),
   }, {
     name: 'Expend',
     type: 'column',
+    color:"#F08080",
     data: Expendmon.map((c) => c.amount),
   }, {
     name: 'Total',
@@ -123,9 +125,13 @@ export const useChart = (title1, documents, title2) => {
       width: [1, 1, 4]
     },
     title: {
-      text: 'Barchart Analysis',
-      align: 'left',
-      offsetX: 110
+      text: 'Total Amount Analysis',
+      align: 'middle',
+      style: {
+        fontSize: '20px',
+        fontWeight: 'bold',
+        color: '#FEB019',
+      },
     },
     xaxis: {
       categories: ["January","February","March","April","May","June","July","August","September","October","November","December"],
@@ -145,7 +151,7 @@ export const useChart = (title1, documents, title2) => {
           }
         },
         title: {
-          text: "Income /Expend",
+          text: "Income / Expend",
           style: {
             color: '#008FFB',
           }

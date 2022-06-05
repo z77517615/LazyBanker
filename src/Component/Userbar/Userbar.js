@@ -16,6 +16,21 @@ export default function Userbar() {
 
   return (
     <nav className="userbar">
+      <ul className ="Dashboard">
+      <div className="search-container">
+              <input
+                type="text"
+                value={searchaccount}
+                onChange={(e) => setSearchaccount(e.target.value)}
+                placeholder="please enter an amount， ex : 600 "
+              ></input>
+              <button className="search">
+                <img className="search" src={search}  
+                 onClick={() => (changeAccount(searchaccount),setSearchaccount("")
+              )} />
+              </button>
+            </div>
+      </ul>
       <ul>
         {user && (
           <>
@@ -29,19 +44,6 @@ export default function Userbar() {
                 <img className="shopping"   src={shopping} />
               </span>
             </Link>
-            <div className="search-container">
-              <input
-                type="text"
-                value={searchaccount}
-                onChange={(e) => setSearchaccount(e.target.value)}
-                placeholder="please enter an amount， ex : 600 "
-              ></input>
-              <button className="search">
-                <img className="search" src={search}  
-                 onClick={() => (changeAccount(searchaccount),setSearchaccount("")
-              )} />
-              </button>
-            </div>
           </>
         )}
       </ul>

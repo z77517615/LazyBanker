@@ -30,7 +30,8 @@
 }
 
 .userbar a {
-  margin: 0px 20px 0px 20px;
+  margin-left: auto;
+  margin-right:10px;
   max-width: 50px;
 }
 a .shopping {
@@ -100,4 +101,8 @@ span.shopping-container {
 .search-container button img:active{
   border:0;
   background:none
+}
+
+.Dashboard{
+  margin-bottom: 10px;
 }
