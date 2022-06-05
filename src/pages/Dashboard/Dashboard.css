@@ -16,7 +16,7 @@
 }
 
 .Chart-container_chart {
-  max-width: 780px;
+  width: 780px;
   padding: 5px;
   margin: 0px auto;
   position: relative;
@@ -28,7 +28,7 @@
   flex-wrap: wrap;
   margin: 5px auto 5px 0px;
   /* justify-content: center; */
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .Barchart-container {
@@ -36,9 +36,9 @@
   position: relative;
   margin: 5px auto 5px 0px;
   justify-content: center;
-  height: 300px;
+  height: 400px;
   overflow-x: scroll;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .list-container {

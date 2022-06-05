@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
+    "apexcharts": "^3.35.3",
     "autoprefixer": "^10.4.7",
     "chart.js": "^3.8.0",
     "dayjs": "^1.11.2",
@@ -40,6 +41,7 @@
     "firebase": "^9.8.1",
     "process": "^0.11.10",
     "react": "^18.1.0",
+    "react-apexcharts": "^1.4.0",
     "react-chartjs-2": "^4.1.0",
     "react-dom": "^18.1.0",
     "react-native-svg": "^12.3.0",

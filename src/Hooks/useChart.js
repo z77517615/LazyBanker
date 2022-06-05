@@ -62,6 +62,13 @@ export const useChart = (title1, documents, title2) => {
 
   const filteredCategories = categories.filter((sc) => parseInt(sc.amount) > 0);
 
+
+  const Montotal = []
+  for(let i=0 ; i <12 ; i++){
+    let account = Incomemon[i].amount- Expendmon[i].amount
+    Montotal.push(account)
+  }
+
   // TransactionsPerDounut.forEach((t) => {
   //   const mon = month.find((c) => c.type === t.date);
 
@@ -70,48 +77,167 @@ export const useChart = (title1, documents, title2) => {
 
   const DounutData = {
     labels: filteredCategories.map((c) => c.type),
-    datasets: [
-      {
-        data: filteredCategories.map((c) => c.amount),
-        backgroundColor: filteredCategories.map((c) => c.color),
-      },
-    ],
+    series: filteredCategories.map((c) => c.amount),
+    colors: filteredCategories.map((c) => c.color),
+    plotOptions:{
+      pie:{
+        donut:{
+          size:"55px",
+          labels:{
+            show:true,
+            total:{
+              show:true,
+              showAlways:true,
+              fontSize:"16px",
+            }
+          }
+        }
+      }
+    }
   };
 
-  // console.log(DounutData)
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   const BarData = {
-    labels: labels,
-    datasets: [
+  series: [{
+    name: 'Income',
+    type: 'column',
+    data: Incomemon.map((c) => c.amount),
+  }, {
+    name: 'Expend',
+    type: 'column',
+    data: Expendmon.map((c) => c.amount),
+  }, {
+    name: 'Total',
+    type: 'line',
+    data: Montotal
+  }],
+  options: {
+    chart: {
+      height: 350,
+      type: 'line',
+      stacked: false
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      width: [1, 1, 4]
+    },
+    title: {
+      text: 'Barchart Analysis',
+      align: 'left',
+      offsetX: 110
+    },
+    xaxis: {
+      categories: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+    },
+    yaxis: [
       {
-        label: "Income",
-        data: Incomemon.map((c) => c.amount),
-        backgroundColor: ["rgba(2, 136, 56,0.2)"],
-        borderColor: ["rgb(2, 136, 56,0.2)"],
-        borderWidth: 1,
+        axisTicks: {
+          show: true,
+        },
+        axisBorder: {
+          show: true,
+          color: '#008FFB'
+        },
+        labels: {
+          style: {
+            colors: '#008FFB',
+          }
+        },
+        title: {
+          text: "Income /Expend",
+          style: {
+            color: '#008FFB',
+          }
+        },
+        tooltip: {
+          enabled: true
+        }
       },
       {
-        label: "Expend",
-        data: Expendmon.map((c) => c.amount),
-        backgroundColor: [" rgba(195, 15, 27,0.2)"],
-        borderColor: ["rgb(195, 15, 27)"],
-        borderWidth: 1,
+        seriesName: 'Income / Expend',
+        opposite: false,
+        show: false,
+        axisTicks: {
+          show: false,
+        },
+      },
+      {
+        seriesName: 'MonTotal',
+        opposite: true,
+        axisTicks: {
+          show: true,
+        },
+        axisBorder: {
+          show: true,
+          color: '#FEB019'
+        },
+        labels: {
+          style: {
+            colors: '#FEB019',
+          },
+        },
+        title: {
+          text: "MonTotal",
+          style: {
+            color: '#FEB019',
+          }
+        }
       },
     ],
-  };
+    tooltip: {
+      fixed: {
+        enabled: true,
+        position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+        offsetY: 30,
+        offsetX: 60
+      },
+    },
+    legend: {
+      horizontalAlign: 'left',
+      offsetX: 40
+    }
+  },
+
+
+};
+
+
+
+  // console.log(DounutData)
+  // const labels = [
+  //   "January",
+  //   "February",
+  //   "March",
+  //   "April",
+  //   "May",
+  //   "June",
+  //   "July",
+  //   "August",
+  //   "September",
+  //   "October",
+  //   "November",
+  //   "December",
+  // ];
+  // const BarData = {
+  //   labels: labels,
+  //   datasets: [
+  //     {
+  //       label: "Income",
+  //       data: Incomemon.map((c) => c.amount),
+  //       backgroundColor: ["rgba(2, 136, 56,0.2)"],
+  //       borderColor: ["rgb(2, 136, 56,0.2)"],
+  //       borderWidth: 1,
+  //     },
+  //     {
+  //       label: "Expend",
+  //       data: Expendmon.map((c) => c.amount),
+  //       backgroundColor: [" rgba(195, 15, 27,0.2)"],
+  //       borderColor: ["rgb(195, 15, 27)"],
+  //       borderWidth: 1,
+  //     },
+  //   ],
+  // };
 
   return { total, DounutData, BarData };
 };

@@ -1,36 +1,38 @@
-import React, { useRef,useEffect,useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./DounutChart.css";
-import {
-  Doughnut,
-  getElementsAtEventForMode,
-  getElementsAtEvent,
-  getDatasetAtEvent,
-} from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  defaults,
-  ArcElement,
-  Tooltip,
-  Legend,
-} from "chart.js";
-ChartJS.register(ArcElement, Tooltip, Legend);
+import Chart from "react-apexcharts";
+// import {
+//   Doughnut,
+//   getElementsAtEventForMode,
+//   getElementsAtEvent,
+//   getDatasetAtEvent,
+// } from "react-chartjs-2";
+// import {
+//   Chart as ChartJS,
+//   defaults,
+//   ArcElement,
+//   Tooltip,
+//   Legend,
+// } from "chart.js";
+// ChartJS.register(ArcElement, Tooltip, Legend);
 
 import { useChart } from "../../Hooks/useChart";
 
 export const DounutChart = ({ title1, documents }) => {
   const { total, DounutData } = useChart(title1, documents);
-  const [emptyarray ,setEmptyarray] = useState(false)
+  const [emptyarray, setEmptyarray] = useState(false);
   const chartRef = useRef();
 
-  useEffect(()=>{
-    if (DounutData.labels.length == "0"){
-      setEmptyarray(true)
+  useEffect(() => {
+    if (DounutData.labels.length == "0") {
+      setEmptyarray(true);
+    } else {
+      setEmptyarray(false);
     }
-    else{
-      setEmptyarray(false)
-    }
-  },[DounutData])
+  }, [DounutData]);
 
+  const options = DounutData;
+  const series = DounutData.series;
   // const onclick = (event) => {
   //   var activepoints=getElementsAtEvent(chartRef.current, event);
   //   if(activepoints.length > 0){
@@ -44,14 +46,20 @@ export const DounutChart = ({ title1, documents }) => {
     <div className={title1 === "Income" ? "Income" : "Expend"}>
       <header className="title">{title1} </header>
       <main>
-        <div style={{ fontWeight: "h5" }}>${total}</div>
-        {emptyarray && <div className="emptyarray">Please entry your first Transaction</div>}
-        {!emptyarray &&<Doughnut
-          data={DounutData}
-          ref={chartRef}
-          width={300}
-          // onClick={onclick}
-        />}
+        {/* <div style={{ fontWeight: "h5" }}>${total}</div> */}
+        {emptyarray && (
+          <div className="emptyarray">Please entry your first Transaction</div>
+        )}
+        {!emptyarray && (
+          <Chart
+            options={options}
+            series={series}
+            type="donut"
+            width={330}
+            height={180}
+            // onClick={onclick}
+          />
+        )}
       </main>
     </div>
   );

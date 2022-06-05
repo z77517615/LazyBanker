@@ -19,8 +19,8 @@
   color: red;
 }
 
-.title {
-  font-size: h3;
+header.title {
+  margin: 5px auto;
 }
 
 .emptyarray{

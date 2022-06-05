@@ -17,12 +17,13 @@ import Userbar from "../../Component/Userbar/Userbar";
 
 export default function Dashboard() {
   const { user } = useAuthContext();
-  const { date, filter,account } = useSelectContext();
+  const { date, filter, account } = useSelectContext();
   const [chartfilter, setChartfilter] = useState("30days");
   const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
   const [startyear, setStartyear] = useState("");
   const [endyear, setEndyear] = useState("");
+  const [checkdoc, setCheckdoc] = useState("");
   const { documents, error } = useCollection("transaction", [
     "uid",
     "==",
@@ -109,10 +110,9 @@ export default function Dashboard() {
       })
     : null;
 
-
   return (
     <div className="home">
-      <Userbar />
+      <Userbar checkdoc={checkdoc} />
       <main className="Chart-container">
         <div className="Chart-container_chart">
           <div>{documents && <Filter changeFilter={changeFilter} />}</div>
