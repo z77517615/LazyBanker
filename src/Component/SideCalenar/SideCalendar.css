@@ -76,7 +76,7 @@ div.Sidecalendar {
 #total {
   font-size: 12px;
   position: absolute;
-  bottom: -5px;
+  bottom: -7px;
   left: 0px;
   right: 0px;
   color: rgb(226, 201, 57);
@@ -99,6 +99,14 @@ div.Sidecalendar {
   background-color: none;
   outline: none;
   color:#cbcbd0
+}
+
+img.arrow {
+  background-color: rgb(55, 98, 138);
+  border-radius: 50%;
+}
+img.arrow:active {
+  background-color: rgba(121, 217, 226, 0.838);
 }
 
 ::placeholder{

@@ -6,7 +6,7 @@ import "./SideCalendar.css";
 
 import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
-import { Spend } from "../../Hooks/useSum";
+import { Spend} from "../../Hooks/useSum";
 
 export function SideCalendar({ documents,getDayClass }) {
   const format = "YYYY-MM-DD";
@@ -15,7 +15,7 @@ export function SideCalendar({ documents,getDayClass }) {
   const [currentweekindex, setCurrentweekindex] = useState(0);
   const [currentWeek, setCurentWeek] = useState(getWeekday(0));
   const [pickday, setPickday] = useState(dayjs().format(format));
-  const { changeDate} = useSelectContext();
+  const { changeDate } = useSelectContext();
 
   useEffect(() => {
     setCurentWeek(getWeekday(currentweekindex));
@@ -51,6 +51,7 @@ export function SideCalendar({ documents,getDayClass }) {
     }
   }
 
+
   return (
     <div className="Sidecalendar">
       <header className="Sidecalendar-header">
@@ -62,13 +63,13 @@ export function SideCalendar({ documents,getDayClass }) {
             className="Slidecalendar-header_button"
             onClick={handlePrevWeek}
           >
-            <img src={left}></img>
+            <img className="arrow" src={left}></img>
           </button>
           <button
             className="Slidecalendar-header_button"
             onClick={handleNextWeek}
           >
-            <img src={right}></img>
+            <img className="arrow" src={right}></img>
           </button>
         </div>
       </header>

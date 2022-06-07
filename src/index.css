@@ -26,7 +26,7 @@ li {
   list-style-type: none;
 }
 
-.btn {
+.btn{
   background: none;
   border: 2px solid #1f7597;
   padding: 6px 12px;
@@ -35,21 +35,84 @@ li {
   font-weight: bold;
   cursor: pointer;
   font-size: 1em;
-} 
+}
 
-.btn:hover {
+.btn:hover
+{
   background: #1f7f97;
   color: #fff;
-} 
+}
+
+.bg {
+  height: 100vh;
+  width: 100%;
+  background: rgb(232, 239, 237);
+  z-index: -999;
+}
+.bg main {
+  display: flex;
+  height: 100vh;
+}
 
 .signup-form,
 .login-form {
   max-width: 360px;
   margin: 60px auto;
   padding: 20px;
-  border-radius: 3px;
-  border:#1f7f97 solid 4px;
-  background-color: #eef8fb;
+  border-radius: 10px;
+  border: rgb(75, 187, 161) solid 4px;
+  background-color: rgb(240, 254, 255);
+}
+
+.signup-form label,
+.login-form label {
+  display: block;
+  margin: 30px auto;
+}
+
+.login-form span,
+.signup-form span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.login-form input,
+.signup-form input {
+  padding: 8px 6px;
+  font-size: 1em;
+  color: #777;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgb(162, 160, 160);
+  border-radius: 4px;
+}
+
+.demo-container {
+  border-left: rgb(209, 200, 200) solid 2px;
+  padding: 20px;
+  max-height: 600px;
+  margin: 40px;
+}
+.demo-container img {
+  border-radius: 0%;
+  width: 350px;
+  height: 200px;
+  margin: 20px 30px;
+}
+
+.sign-title {
+  color:rgb(81, 199, 208);
+  font-size: 36px;
+  font-weight: bold;
+  /* font-style: italic; */
+  margin:0px auto;
+  text-shadow:1px 1px 2px rgb(31, 32, 31);
+}
+
+.sign-discribe {
+  margin-top: 5px;
+  font-size: 20px;
+  color:rgb(194, 189, 183);
 }
 
 .error {
@@ -59,6 +122,11 @@ li {
   border-radius: 4px;
   padding: 8px;
   margin: 10px 0;
+}
+
+.analysis img{
+  display: block;
+  margin:0px auto;
 }
 
 ::-webkit-scrollbar {

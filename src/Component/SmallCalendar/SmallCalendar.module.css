@@ -42,11 +42,11 @@
   background-size: 30%;
 }
 
-img {
+img.arrow {
   background-color: rgb(55, 98, 138);
   border-radius: 50%;
 }
-img:active {
+img.arrow:active {
   background-color: rgba(121, 217, 226, 0.838);
 }
 

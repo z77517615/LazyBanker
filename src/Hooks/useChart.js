@@ -62,11 +62,10 @@ export const useChart = (title1, documents, title2) => {
 
   const filteredCategories = categories.filter((sc) => parseInt(sc.amount) > 0);
 
-
-  const Montotal = []
-  for(let i=0 ; i <12 ; i++){
-    let account = Incomemon[i].amount- Expendmon[i].amount
-    Montotal.push(account)
+  const Montotal = [];
+  for (let i = 0; i < 12; i++) {
+    let account = Incomemon[i].amount - Expendmon[i].amount;
+    Montotal.push(account);
   }
 
   // TransactionsPerDounut.forEach((t) => {
@@ -79,136 +78,151 @@ export const useChart = (title1, documents, title2) => {
     labels: filteredCategories.map((c) => c.type),
     series: filteredCategories.map((c) => c.amount),
     colors: filteredCategories.map((c) => c.color),
-    plotOptions:{
-      pie:{
-        donut:{
-          size:"55px",
-          labels:{
-            show:true,
-            total:{
-              show:true,
-              showAlways:true,
-              fontSize:"16px",
-            }
-          }
-        }
-      }
-    }
+    plotOptions: {
+      pie: {
+        donut: {
+          size: "55px",
+          labels: {
+            show: true,
+            total: {
+              show: true,
+              showAlways: true,
+              fontSize: "16px",
+            },
+          },
+        },
+      },
+    },
   };
 
   const BarData = {
-  series: [{
-    name: 'Income',
-    type: 'column',
-    color:"#7FFFD4",
-    data: Incomemon.map((c) => c.amount),
-  }, {
-    name: 'Expend',
-    type: 'column',
-    color:"#F08080",
-    data: Expendmon.map((c) => c.amount),
-  }, {
-    name: 'Total',
-    type: 'line',
-    data: Montotal
-  }],
-  options: {
-    chart: {
-      height: 350,
-      type: 'line',
-      stacked: false
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      width: [1, 1, 4]
-    },
-    title: {
-      text: 'Total Amount Analysis',
-      align: 'middle',
-      style: {
-        fontSize: '20px',
-        fontWeight: 'bold',
-        color: '#FEB019',
-      },
-    },
-    xaxis: {
-      categories: ["January","February","March","April","May","June","July","August","September","October","November","December"],
-    },
-    yaxis: [
+    series: [
       {
-        axisTicks: {
-          show: true,
-        },
-        axisBorder: {
-          show: true,
-          color: '#008FFB'
-        },
-        labels: {
-          style: {
-            colors: '#008FFB',
-          }
-        },
-        title: {
-          text: "Income / Expend",
-          style: {
-            color: '#008FFB',
-          }
-        },
-        tooltip: {
-          enabled: true
-        }
+        name: "Income",
+        type: "column",
+        color: "#7FFFD4",
+        data: Incomemon.map((c) => c.amount),
       },
       {
-        seriesName: 'Income / Expend',
-        opposite: false,
-        show: false,
-        axisTicks: {
-          show: false,
-        },
+        name: "Expend",
+        type: "column",
+        color: "#F08080",
+        data: Expendmon.map((c) => c.amount),
       },
       {
-        seriesName: 'MonTotal',
-        opposite: true,
-        axisTicks: {
-          show: true,
-        },
-        axisBorder: {
-          show: true,
-          color: '#FEB019'
-        },
-        labels: {
-          style: {
-            colors: '#FEB019',
-          },
-        },
-        title: {
-          text: "MonTotal",
-          style: {
-            color: '#FEB019',
-          }
-        }
+        name: "Total",
+        type: "line",
+        data: Montotal,
       },
     ],
-    tooltip: {
-      fixed: {
-        enabled: true,
-        position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
-        offsetY: 30,
-        offsetX: 60
+    options: {
+      chart: {
+        height: 350,
+        type: "line",
+        stacked: false,
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        width: [4, 4, 4],
+      },
+      title: {
+        text: "Total Amount Analysis",
+        align: "middle",
+        style: {
+          fontSize: "20px",
+          fontWeight: "bold",
+          color: "#FEB019",
+        },
+      },
+      xaxis: {
+        categories: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ],
+      },
+      yaxis: [
+        {
+          seriesName: "Income",
+          axisTicks: {
+            show: true,
+          },
+          axisBorder: {
+            show: false,
+            color: "#008FFB",
+          },
+          labels: {
+            style: {
+              colors: "#008FFB",
+            },
+          },
+          title: {
+            text: "Income / Expend",
+            style: {
+              color: "#008FFB",
+            },
+          },
+          tooltip: {
+            enabled: true,
+          },
+        },
+        {
+          seriesName:"Income",
+          show: false,
+        },
+        {
+          seriesName: "MonTotal",
+          opposite: true,
+          axisTicks: {
+            show: true,
+          },
+          axisBorder: {
+            show: true,
+            color: "#FEB019",
+          },
+          labels: {
+            style: {
+              colors: "#FEB019",
+            },
+          },
+          title: {
+            text: "MonTotal",
+            style: {
+              color: "#FEB019",
+            },
+          },
+        },
+      ],
+      tooltip: {
+        // shared: false,
+        // intersect: true,
+        // x: {
+        //   show: false
+        // },
+        fixed: {
+          enabled: true,
+          position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
+          offsetY: 30,
+          offsetX: 60,
+        },
+      },
+      legend: {
+        horizontalAlign: "left",
+        offsetX: 40,
       },
     },
-    legend: {
-      horizontalAlign: 'left',
-      offsetX: 40
-    }
-  },
-
-
-};
-
-
+  };
 
   // console.log(DounutData)
   // const labels = [

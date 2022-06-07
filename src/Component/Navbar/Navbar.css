@@ -22,7 +22,9 @@
 .navbar button,
 .navbar a {
   margin-left: 16px;
+  font-weight: bold;
 }
+
 .navbar a {
   color: #333;
   text-decoration: none;

@@ -7,7 +7,7 @@ import { getMonth } from "../../Hooks/useutil";
 import styles from "./SmallCalendar.module.css";
 
 
-export function SmallCalendar({ passpickday, selc, setSelc }) {
+export function SmallCalendar({ passpickday, selc, setSelc }){
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 
@@ -18,7 +18,6 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
   useEffect(() => {
     setCurentMonth(getMonth(currentMonthIndex));
   }, [currentMonthIndex]);
-
 
   function handlePrevMonth() {
     setCurrentIMonthIndex(currentMonthIndex - 1);
@@ -35,7 +34,11 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
     if (selc && pickday === currtDay) {
       passpickday(pickday);
       return `${styles.selected}`;
-    } else {
+    } 
+    if (selc && pickday === nowday) {
+      passpickday(pickday);
+    }
+    else {
       return "";
     }
   }
@@ -44,7 +47,7 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
     <div className={styles.smallcalendar}>
       <header className={styles.smallcalendar_header}>
         <button className={styles.cal_button} onClick={handlePrevMonth}>
-          <img src={left}></img>
+          <img  className={styles.arrow} src={left}></img>
         </button>
         <p className="smallcalendar-header_title">
           {dayjs(new Date(dayjs().year(), currentMonthIndex)).format(
@@ -52,7 +55,7 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
           )}
         </p>
         <button className={styles.cal_button} onClick={handleNextMonth}>
-          <img src={right}></img>
+          <img  className={styles.arrow} src={right}></img>
         </button>
       </header>
       <main className={styles.cal_main}>

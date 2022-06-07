@@ -59,7 +59,6 @@ export default function TransactionList({ documents }) {
   const [popup, setPopup] = useState(false);
   const { user } = useAuthContext();
   const [transaction, setTransaction] = useState("");
-  const uuid = uuidv4();
   const [popupstyle, setPopupstyle] = useState(false);
 
   return (

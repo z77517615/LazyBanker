@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [chartfilter, setChartfilter] = useState("this month");
   const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
+  const [endday, setEndday] = useState("");
   const [startyear, setStartyear] = useState("");
   const [endyear, setEndyear] = useState("");
   const { documents, error } = useCollection("transaction", [
@@ -28,6 +29,7 @@ export default function Dashboard() {
     "==",
     user.uid,
   ]);
+
   const format = "YYYY-MM-DD";
   const today = new Date(dayjs().format(format));
 
@@ -42,22 +44,27 @@ export default function Dashboard() {
   useEffect(() => {
     if (chartfilter == "this month") {
       setStartday(new Date(dayjs().date(1).format(format)));
+      setEndday(new Date(dayjs().date(31).format(format)));
       return;
     }
     if (chartfilter == "30days") {
       setStartday(new Date(dayjs().subtract(30, "day").format(format)));
+      setEndday(today);
       return;
     }
     if (chartfilter == "90days") {
       setStartday(new Date(dayjs().subtract(90, "day").format(format)));
+      setEndday(today);
       return;
     }
     if (chartfilter == "half a year") {
       setStartday(new Date(dayjs().subtract(180, "day").format(format)));
+      setEndday(today);
       return;
     }
     if (chartfilter == "year") {
       setStartday(new Date(dayjs().subtract(1, "year").format(format)));
+      setEndday(today);
       return;
     }
   }, [chartfilter]);
@@ -83,7 +90,7 @@ export default function Dashboard() {
   const filterdocumnts = documents
     ? documents.filter((t) => {
         var date = new Date(t.date);
-        return date >= startday && date <= today;
+        return date >= startday && date <= endday;
       })
     : null;
 

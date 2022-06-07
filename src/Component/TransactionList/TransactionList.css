@@ -30,7 +30,7 @@
   margin-left: 15px;
 }
 
-img.transaction-delete {
+img.transaction-delete{
   position: absolute;
   width: 30px;
   height: 30px;
@@ -69,5 +69,10 @@ img.transaction-edit{
 .transaction-item__list_delete,
 .transaction-item__list_edit {
   border: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0px;
+  top: 0px;
 }
 

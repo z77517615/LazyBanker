@@ -1,6 +1,8 @@
 //style
 import "./signup.css";
-import lazybanker from "../../assets/lazybanker.jpg";
+import analysis from "../../assets/analysis.png";
+import demo1 from "../../assets/demo1.png";
+import demo2 from "../../assets/demo2.png";
 
 import React, { useState } from "react";
 import { useSignup } from "../../Hooks/useSignup";
@@ -40,52 +42,67 @@ export default function Signup() {
   };
 
   return (
-    <div className="signup">
-      <div className="bg">
-        <img src={lazybanker}></img>
-      </div>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <h2>Signup</h2>
-        <label>
-          <span>email:</span>
-          <input
-            required
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </label>
-        <label>
-          <span>password:</span>
-          <input
-            required
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </label>
-        <label>
-          <span>Display Name:</span>
-          <input
-            required
-            type="text"
-            onChange={(e) => setDisplayName(e.target.value)}
-            value={displayName}
-          />
-        </label>
-        <label>
-          <span>Profile thumbnail:</span>
-          <input required type="file" onChange={handleFileChange} />
-          {thumnailError && <div className="error">{thumnailError}</div>}
-        </label>
-        {!isPending && <button className="btn">Sign up</button>}
-        {isPending && (
-          <button className="btn" disabled>
-            Loading ...
-          </button>
-        )}
-        {error && <p className="error">{error}</p>}
-      </form>
+    <div className="bg">
+      <main>
+        <form className="signup-form" onSubmit={handleSubmit}>
+          <h2>Signup</h2>
+          <label>
+            <span>email:</span>
+            <input
+              required
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </label>
+          <label>
+            <span>password:</span>
+            <input
+              required
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+          </label>
+          <label>
+            <span>Display Name:</span>
+            <input
+              required
+              type="text"
+              onChange={(e) => setDisplayName(e.target.value)}
+              value={displayName}
+            />
+          </label>
+          <label>
+            <span>Profile thumbnail:</span>
+            <input required type="file" onChange={handleFileChange} />
+            {thumnailError && <div className="error">{thumnailError}</div>}
+          </label>
+          {!isPending && <button className="btn">Sign up</button>}
+          {isPending && (
+            <button className="btn" disabled>
+              Loading ...
+            </button>
+          )}
+          {error && <p className="error">{error}</p>}
+        </form>
+        <div className="demo-container">
+          <div>
+            <center className="sign-title">Easy record with LazyBanker</center>
+            <center className="sign-discribe">
+              Make your own financial tracker with simple input and graph
+              analysis
+            </center>
+          </div>
+          <div className="analysis">
+            <img src={analysis}></img>
+          </div>
+          <div>
+            <img src={demo1}></img>
+            <img src={demo2}></img>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
