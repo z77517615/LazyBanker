@@ -14,15 +14,17 @@ export default function AddForm({ uid, transaction,popup,setPopup,setPopupstyle}
   const [transactionstate, setTransactionstate] = useState("");
   const { addTransaction, updateTransaction, response } = editTransaction("transaction");
   const [pickday, setPickday] = useState(dayjs().format(format));
-  const [selc, setSelc] = useState(true);
+  const [selc, setSelc] = useState(false);
   const date = pickday;
 
 
-  const passpickday =(pickday)=>{
+  const passpickday = (pickday)=>{
     setPickday(pickday)
   }
-  
+
+
   const handleSubmit = (e) => {
+
     e.preventDefault();
     if (!transactionstate) {
       addTransaction({

@@ -7,7 +7,7 @@ import { getMonth } from "../../Hooks/useutil";
 import styles from "./SmallCalendar.module.css";
 
 
-export function SmallCalendar({ passpickday, selc, setSelc }){
+export  function SmallCalendar({ passpickday, selc, setSelc }){
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 

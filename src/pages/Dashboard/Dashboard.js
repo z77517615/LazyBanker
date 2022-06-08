@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../../Component/Navbar/Navbar";
 import dayjs from "dayjs";
 //style
 import "./Dashboard.css";
@@ -121,44 +122,47 @@ export default function Dashboard() {
     : null;
 
   return (
-    <div className="home">
-      <Userbar />
-      <main className="Chart-container">
-        <div className="Chart-container_chart">
-          <div>{documents && <Filter changeFilter={changeFilter} />}</div>
-          <div>
-            <section className="Dounutchart-container">
-              {filterdocumnts && (
-                <DounutChart title1="Income" documents={filterdocumnts} />
-              )}
-              {filterdocumnts && (
-                <DounutChart title1="Expend" documents={filterdocumnts} />
-              )}
-            </section>
-
+    <>
+      <Navbar />
+      <div className="home">
+        <Userbar />
+        <main className="Chart-container">
+          <div className="Chart-container_chart">
+            <div>{documents && <Filter changeFilter={changeFilter} />}</div>
             <div>
-              {documents && (
-                <Barchartfilter changeBarFilter={changeBarFilter} />
-              )}
-            </div>
-            <div>
-              <section className="Barchart-container">
-                {barfilterdocumnts && (
-                  <BarChart
-                    title1="Income"
-                    title2="Expend"
-                    documents={barfilterdocumnts}
-                  />
+              <section className="Dounutchart-container">
+                {filterdocumnts && (
+                  <DounutChart title1="Income" documents={filterdocumnts} />
+                )}
+                {filterdocumnts && (
+                  <DounutChart title1="Expend" documents={filterdocumnts} />
                 )}
               </section>
+
+              <div>
+                {documents && (
+                  <Barchartfilter changeBarFilter={changeBarFilter} />
+                )}
+              </div>
+              <div>
+                <section className="Barchart-container">
+                  {barfilterdocumnts && (
+                    <BarChart
+                      title1="Income"
+                      title2="Expend"
+                      documents={barfilterdocumnts}
+                    />
+                  )}
+                </section>
+              </div>
             </div>
           </div>
-        </div>
-        <section className="list-container">
-          <SideCalendar documents={documents} />
-          <TransactionList documents={transaction} />
-        </section>
-      </main>
-    </div>
+          <section className="list-container">
+            <SideCalendar documents={documents} />
+            <TransactionList documents={transaction} />
+          </section>
+        </main>
+      </div>
+    </>
   );
 }

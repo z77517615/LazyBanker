@@ -1,10 +1,12 @@
 //style
 import "./signup.css";
+import avatar from "../../assets/avatar.svg";
 import graph from "../../assets/graph.svg";
 import demo1 from "../../assets/demo1.png";
 import demo2 from "../../assets/demo2.png";
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useSignup } from "../../Hooks/useSignup";
 
 export default function Signup() {
@@ -43,57 +45,69 @@ export default function Signup() {
 
   return (
     <div className="bg">
+      <div className="first-title">
+        <center className="lg-title">Easy record with LazyBanker</center>
+        <center className="lg-discribe">
+          Make your own financial tracker with simple input and graph analysis
+        </center>
+      </div>
       <main>
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <h2>Signup</h2>
-          <label>
-            <span>email:</span>
-            <input
-              required
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-          </label>
-          <label>
-            <span>password:</span>
-            <input
-              required
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </label>
-          <label>
-            <span>Display Name:</span>
-            <input
-              required
-              type="text"
-              onChange={(e) => setDisplayName(e.target.value)}
-              value={displayName}
-            />
-          </label>
-          <label>
-            <span>Profile thumbnail:</span>
-            <input required type="file" onChange={handleFileChange} />
-            {thumnailError && <div className="error">{thumnailError}</div>}
-          </label>
-          {!isPending && <button className="btn">Sign up</button>}
-          {isPending && (
-            <button className="btn" disabled>
-              Loading ...
+        <div className="signupform-container">
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <img className="avatar" src={avatar} />
+            <label>
+              <div className="i">
+                <i className="fas fa-envelope"></i>
+              </div>
+              <input
+                required
+                type="email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="ex. 123456@gmail.com"
+              />
+            </label>
+            <label>
+              <div className="i">
+                <i className="fas fa-lock"></i>
+              </div>
+              <input
+                required
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                placeholder="ex. 123456"
+              />
+            </label>
+            <label>
+              <div className="i">
+                <i className="fas fa-user"></i>
+              </div>
+              <input
+                required
+                type="text"
+                onChange={(e) => setDisplayName(e.target.value)}
+                value={displayName}
+                placeholder="ex. Sophy"
+              />
+            </label>
+            <label>
+              <input required type="file" onChange={handleFileChange} />
+              {thumnailError && <div className="error">{thumnailError}</div>}
+            </label>
+            {!isPending && <button className="lg-btn">Sign up</button>}
+            {isPending && (
+              <button className="lg-btn" disabled>
+                Loading ...
+              </button>
+            )}
+            {error && <p className="error">{error}</p>}
+            <button className="lg-btn">
+              <Link to="/login">Login</Link>
             </button>
-          )}
-          {error && <p className="error">{error}</p>}
-        </form>
+          </form>
+        </div>
         <div className="demo-container">
-          <div>
-            <center className="sign-title">Easy record with LazyBanker</center>
-            <center className="sign-discribe">
-              Make your own financial tracker with simple input and graph
-              analysis
-            </center>
-          </div>
           <div className="analysis">
             <img src={graph}></img>
           </div>

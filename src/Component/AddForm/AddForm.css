@@ -90,15 +90,13 @@ button:active {
     display: flex;
     flex-wrap: wrap;
     width: 43%;
-    top: 50%;
-    left: 27%;
+    top: 10%;
+    left: 20%;
     background-size: cover;
   }
 }
 @media (max-width: 800px) {
   .popupfromstyle {
-    right: 50%;
-    left: 20%;
     width: 60%;
   }
 }
@@ -114,8 +112,7 @@ button:active {
     width: 90%;
   }
   .popupfromstyle {
-    top: 50%;
-    left: 5%;
+    left: 5%; 
     width: 90%;
   }
 }

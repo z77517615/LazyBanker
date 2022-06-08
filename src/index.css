@@ -26,7 +26,12 @@ li {
   list-style-type: none;
 }
 
-.btn{
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn {
   background: none;
   border: 2px solid #1f7597;
   padding: 6px 12px;
@@ -37,37 +42,38 @@ li {
   font-size: 1em;
 }
 
-.btn:hover
-{
+.btn:hover {
   background: #1f7f97;
   color: #fff;
 }
 
 .bg {
-  height: 100vh;
+  position: absolute;
+  top: 0px;
   width: 100%;
   background: rgb(232, 239, 237);
   z-index: -999;
 }
 .bg main {
   max-width: 1200px;
-  margin:0px auto;
+  margin: 0px auto;
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 0 2rem;
 }
 
-.signup-form,
-.login-form {
-  padding: 20px;
-  border-radius: 10px;
-  border: rgb(75, 187, 161) solid 4px;
-  background-color: rgb(240, 254, 255);
+.first-title {
+  margin-top: 50px;
+}
+.login-form,
+.signup-form {
+  width: 360px;
 }
 
 .signup-form label,
 .login-form label {
   display: block;
+  display: flex;
   margin: 30px auto;
 }
 
@@ -79,24 +85,28 @@ li {
 
 .login-form input,
 .signup-form input {
-  padding: 8px 6px;
+  padding: 8px 10px;
   font-size: 1em;
   color: #777;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid rgb(162, 160, 160);
-  border-radius: 4px;
+  border-radius: 25px;
 }
 
 .demo-container {
-  /* border-left: rgb(209, 200, 200) solid 2px; */
+  padding: 20px;
+  margin: 40px 5px;
+}
+.loginform-container,
+.signupform-container {
+  width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 20px;
   margin: 40px 10px;
-
-}
-.loginform-container{
-  max-width: 360px;
-  margin:auto;
 }
 
 .demo-container img {
@@ -105,33 +115,66 @@ li {
   margin: 20px 5px;
 }
 
-.sign-title {
-  color:rgb(81, 199, 208);
+.lg-title {
+  color: #333;
+  text-transform: uppercase;
   font-size: 36px;
   font-weight: bold;
-  /* font-style: italic; */
-  margin:0px auto;
-  text-shadow:1px 1px 2px rgb(31, 32, 31);
+  margin: 0px auto;
+  text-shadow: 1px 1px 2px rgb(31, 32, 31);
 }
 
-.sign-discribe {
+.lg-discribe {
   margin-top: 5px;
   font-size: 20px;
-  color:rgb(194, 189, 183);
+  color: rgb(194, 189, 183);
+}
+
+.avatar {
+  height: 100px;
+}
+
+.i {
+  color: #9d9c9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.lg-btn {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  background-size: 200%;
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.lg-btn:hover {
+  background-position: right;
 }
 
 .error {
   color: red;
   background: pink;
   border: 3px solid red;
-  border-radius: 4px;
+  border-radius: 25px;
   padding: 8px;
   margin: 10px 0;
 }
 
-.analysis img{
+.analysis img {
   display: block;
-  margin:0px auto;
+  margin: 0px auto;
 }
 
 ::-webkit-scrollbar {
@@ -141,51 +184,34 @@ li {
   display: none;
 }
 
-@media(max-width:1200px){
-  .demo img{
-    width:45%;
-    margin:10px
+@media (max-width: 1230px) {
+  .demo img {
+    display: block;
+    width: 45%;
+    margin: 10px auto;
   }
 }
 
-@media(max-width:1000px) {
-  .demo-container img{
+@media (max-width: 1000px) {
+  .demo-container img {
     width: 80%;
   }
-  .demo-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* width: 80%; */
-  }
-
-  form.login-form{
-    width:80%;
-  }
-  .demo{
-    display: none;
+  .loginform-container,
+  .signupform-container {
+    margin: 30px auto;
   }
 }
 
-
-@media(max-width:600px) {
-  .demo-container img{
-    width: 70%;
+@media (max-width: 800px) {
+  .bg main {
+    grid-template-columns: 1fr;
+    padding: 0rem;
   }
-  form.login-form{
-    width: 60%;
+  .demo-container {
+    display: none;
   }
-  .demo-container{
-    margin: 0px;
-    padding:20px 0px;
-  }
-  .sign-title {
-    font-size: 32px;
-  }
-  .sign-discribe {
-    font-size: 20px;
-  }
-  .signup-form label{
-    margin:15px auto
+  .loginform-container,
+  .signupform-container {
+    width: 300px;
   }
 }

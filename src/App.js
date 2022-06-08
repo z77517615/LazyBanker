@@ -11,7 +11,6 @@ import Dashboard from "./pages/Dashboard/Dashboard.js";
 import Login from "./pages/login/login.js";
 import Signup from "./pages/signup/signup.js";
 import Create from "./pages/create/create.js";
-import Navbar from "./Component/Navbar/Navbar";
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -20,7 +19,6 @@ function App() {
     <div className="content">
       {authIsReady && (
         <BrowserRouter>
-          <Navbar />
           <Switch>
             <Route exact path="/">
               {user && <Dashboard />}
