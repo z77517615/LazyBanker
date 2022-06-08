@@ -1,0 +1,94 @@
+.smallcalendar {
+  max-width: 480px;
+  font-size: 1rem;
+  position: relative;
+}
+
+.smallcalendar_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 70px;
+  font-weight: bold;
+  font-size: 22px;
+  align-items: center;
+}
+
+.cal_main {
+  display: grid;
+  padding: 5px 50px;
+  grid-template-columns: repeat(7, 50px);
+  grid-template-rows: repeat(6, 50px);
+  overflow-x: hidden;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.cal_main span {
+  margin: auto;
+}
+
+.cal_button {
+  background: none;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cal_button:active {
+  border: none;
+  background: none;
+  color: none;
+  background-size: 30%;
+}
+
+img.arrow {
+  background-color: rgb(55, 98, 138);
+  border-radius: 50%;
+}
+img.arrow:active {
+  background-color: rgba(121, 217, 226, 0.838);
+}
+
+.days {
+  background: none;
+  border: none;
+  padding: 3px 3px;
+  border-radius: 50%;
+  color: #1f7597;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 5px 5px;
+}
+.days:active {
+  border: none;
+}
+.selected {
+  background-color: rgb(130, 231, 114);
+  color: white;
+}
+
+.currentDay {
+  background: #70b8d5;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+@media (max-width: 1200px) {
+  .cal_main {
+    padding: 5px 40px;
+    grid-template-columns: repeat(7, 40px);
+    grid-template-rows: repeat(6, 40px);
+  }
+}
+
+@media (max-width: 600px) {
+  .smallcalendar_header {
+    padding: 10px 50px;
+  }
+}
