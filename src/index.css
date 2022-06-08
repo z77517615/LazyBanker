@@ -50,14 +50,15 @@ li {
   z-index: -999;
 }
 .bg main {
-  display: flex;
-  height: 100vh;
+  max-width: 1200px;
+  margin:0px auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0 2rem;
 }
 
 .signup-form,
 .login-form {
-  max-width: 360px;
-  margin: 60px auto;
   padding: 20px;
   border-radius: 10px;
   border: rgb(75, 187, 161) solid 4px;
@@ -88,16 +89,20 @@ li {
 }
 
 .demo-container {
-  border-left: rgb(209, 200, 200) solid 2px;
+  /* border-left: rgb(209, 200, 200) solid 2px; */
   padding: 20px;
-  max-height: 600px;
-  margin: 40px;
+  margin: 40px 10px;
+
 }
+.loginform-container{
+  max-width: 360px;
+  margin:auto;
+}
+
 .demo-container img {
   border-radius: 0%;
-  width: 350px;
   height: 200px;
-  margin: 20px 30px;
+  margin: 20px 5px;
 }
 
 .sign-title {
@@ -136,8 +141,51 @@ li {
   display: none;
 }
 
-@media screen and(max-width:600px) {
-  .container {
-    width: 100%;
+@media(max-width:1200px){
+  .demo img{
+    width:45%;
+    margin:10px
+  }
+}
+
+@media(max-width:1000px) {
+  .demo-container img{
+    width: 80%;
+  }
+  .demo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 80%; */
+  }
+
+  form.login-form{
+    width:80%;
+  }
+  .demo{
+    display: none;
+  }
+}
+
+
+@media(max-width:600px) {
+  .demo-container img{
+    width: 70%;
+  }
+  form.login-form{
+    width: 60%;
+  }
+  .demo-container{
+    margin: 0px;
+    padding:20px 0px;
+  }
+  .sign-title {
+    font-size: 32px;
+  }
+  .sign-discribe {
+    font-size: 20px;
+  }
+  .signup-form label{
+    margin:15px auto
   }
 }

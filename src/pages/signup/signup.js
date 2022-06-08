@@ -1,6 +1,6 @@
 //style
 import "./signup.css";
-import analysis from "../../assets/analysis.png";
+import graph from "../../assets/graph.svg";
 import demo1 from "../../assets/demo1.png";
 import demo2 from "../../assets/demo2.png";
 
@@ -95,9 +95,9 @@ export default function Signup() {
             </center>
           </div>
           <div className="analysis">
-            <img src={analysis}></img>
+            <img src={graph}></img>
           </div>
-          <div>
+          <div className="demo">
             <img src={demo1}></img>
             <img src={demo2}></img>
           </div>

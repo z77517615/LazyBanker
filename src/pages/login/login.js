@@ -1,6 +1,6 @@
 //style
 import "./login.css";
-import analysis from "../../assets/analysis.png";
+import graph from "../../assets/graph.svg";
 import demo1 from "../../assets/demo1.png";
 import demo2 from "../../assets/demo2.png";
 
@@ -24,6 +24,7 @@ const login = () => {
         <img src={lazybanker}></img>
       </div> */}
       <main>
+        <div className="loginform-container">
         <form className="login-form" onSubmit={handleSubmit}>
           <h2>Login</h2>
           <label>
@@ -54,18 +55,19 @@ const login = () => {
           )}
           {error && <p className="error">{error}</p>}
         </form>
+        </div>
         <div className="demo-container">
           <div>
-          <center className="sign-title">Easy record with LazyBanker</center>
+          <center className="sign-title">Welcome to LazyBanker</center>
           <center className="sign-discribe">
               Make your own financial tracker with simple input and graph
               analysis
           </center>
           </div>
           <div className="analysis">
-            <img src={analysis}></img>
+            <img src={graph}></img>
           </div>
-          <div>
+          <div className="demo">
             <img src={demo1}></img>
             <img src={demo2}></img>
           </div>

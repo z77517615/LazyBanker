@@ -114,3 +114,9 @@ span.shopping-container:active{
 .Dashboard{
   margin-bottom: 10px;
 }
+
+@media(max-width:600px){
+  .search-container{
+   margin-bottom:10px;
+  }
+}
