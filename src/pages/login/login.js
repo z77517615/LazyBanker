@@ -73,7 +73,7 @@ const login = () => {
               id="google"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
             />
-            <div class="btn-text">Login with Google</div>
+            <div className="btn-text">Login with Google</div>
           </button>
         </div>
         <div className="demo-container">
