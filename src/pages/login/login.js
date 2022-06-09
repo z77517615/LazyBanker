@@ -11,8 +11,8 @@ import { useLogin } from "../../Hooks/useLogin";
 import { Link } from "react-router-dom";
 
 const login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@gmail.com");
+  const [password, setPassword] = useState("test111");
   const { error, login, isPending } = useLogin();
 
   const handleSubmit = (e) => {
@@ -22,9 +22,6 @@ const login = () => {
 
   return (
     <div className="bg">
-      {/* <div className="bg">
-        <img src={lazybanker}></img>
-      </div> */}
       <div className="first-title">
         <center className="lg-title">Easy record with LazyBanker</center>
         <center className="lg-discribe">

@@ -9,7 +9,7 @@ import { SideCalendar } from "../../Component/SideCalenar/SideCalendar";
 import { useAuthContext } from "../../Hooks/useAuthContext";
 import { useCollection } from "../../Hooks/useCollection";
 import { useSelectContext } from "../../Hooks/useSelectContext";
-import { DounutChart } from "../../Component/Chart/DounutChart";
+import { DonutChart } from "../../Component/Chart/DonutChart";
 import { BarChart } from "../../Component/Chart/BarChart";
 import TransactionList from "../../Component/TransactionList/TransactionList";
 import Filter from "./Filter";
@@ -132,13 +132,12 @@ export default function Dashboard() {
             <div>
               <section className="Dounutchart-container">
                 {filterdocumnts && (
-                  <DounutChart title1="Income" documents={filterdocumnts} />
+                  <DonutChart title1="Income" documents={filterdocumnts} />
                 )}
                 {filterdocumnts && (
-                  <DounutChart title1="Expend" documents={filterdocumnts} />
+                  <DonutChart title1="Expend" documents={filterdocumnts} />
                 )}
               </section>
-
               <div>
                 {documents && (
                   <Barchartfilter changeBarFilter={changeBarFilter} />
