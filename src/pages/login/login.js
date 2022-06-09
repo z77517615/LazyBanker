@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 const login = () => {
   const [email, setEmail] = useState("test@gmail.com");
   const [password, setPassword] = useState("test111");
-  const { error, login, isPending } = useLogin();
+  const { error, login, isPending, signInWithGoogle } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,6 +68,13 @@ const login = () => {
               <Link to="/signup">Signup</Link>
             </button>
           </form>
+          <button className="google" onClick={signInWithGoogle}>
+            <img
+              id="google"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+            />
+            <div class="btn-text">Login with Google</div>
+          </button>
         </div>
         <div className="demo-container">
           <div className="analysis">
