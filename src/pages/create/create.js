@@ -1,7 +1,7 @@
 //style
 import "./create.css";
 
-
+import Navbar from "../../Component/Navbar/Navbar";
 import AddForm from "../../Component/AddForm/AddForm";
 import AddList from "../../Component/AddList/AddList";
 import React, { useState } from "react";
@@ -20,6 +20,7 @@ const create = () => {
 
   return (
     <div className="list">
+       <Navbar />
       <center>
         <AddList uid={user.uid} passTransaction={passtransaction} />
         <AddForm uid={user.uid} transaction={transaction} />

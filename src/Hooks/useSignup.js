@@ -50,6 +50,10 @@ export const useSignup = () => {
             "Invalid email, please input valid email ex.555555@gmail.com"
           );
         } else if (
+          err.message == "Firebase: Error (auth/email-already-in-use)."
+        ) {
+          setError("Email already in use");
+        } else if (
           err.message ==
           "Firebase: Password should be at least 6 characters (auth/weak-password)."
         ) {

@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
-import "./DounutChart.css";
+import "./DonutChart.css";
 import Chart from "react-apexcharts";
 
 import { useChart } from "../../Hooks/useChart";
 
-export const DounutChart = ({ title1, documents }) => {
-  const { DounutData } = useChart(title1, documents);
+export const DonutChart = ({ title1, documents }) => {
+  const { DonutData } = useChart(title1, documents);
   const [emptyarray, setEmptyarray] = useState(false);
 
   useEffect(() => {
-    if (DounutData.labels.length == "0") {
+    if (DonutData.labels.length == "0") {
       setEmptyarray(true);
     } else {
       setEmptyarray(false);
     }
-  }, [DounutData]);
+  }, [DonutData]);
 
-  const options = DounutData;
-  const series = DounutData.series;
+  const options = DonutData;
+  const series = DonutData.series;
 
   return (
     <div className={title1 === "Income" ? "Income" : "Expend"}>
@@ -40,4 +40,4 @@ export const DounutChart = ({ title1, documents }) => {
   );
 };
 
-export default DounutChart;
+export default DonutChart;
