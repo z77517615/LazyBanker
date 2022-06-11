@@ -1,4 +1,5 @@
-# LazyBanker  #### Make your own financial tracker with simple input and graph analysis
+# LazyBanker   <font face="黑體" size=2>Make your own financial tracker with simple input and graph analysis</font>
+
 <br/>
 
 ## 專案展示
