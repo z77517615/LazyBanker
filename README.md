@@ -30,5 +30,7 @@
 ![](https://i.imgur.com/rjQaY4O.png)
 
 ## 功能介紹
-<img src="src/assets/demo.mp4" width="650px">
+<video id="video" controls="" preload="none" poster="封面">
+      <source id="mp4" src="" type="video/mp4">
+</videos>
 
