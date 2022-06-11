@@ -30,6 +30,10 @@
 ![](https://i.imgur.com/rjQaY4O.png)
 
 ## 功能介紹
+* 使用者登入後點擊新增按鈕，點選日期新增每日消費。
+* 首頁整理:
+* * 消費圖表分析
+* * 計算每日消費總額、每日消費L
 https://user-images.githubusercontent.com/94062367/173174382-243cf4ef-ae78-4366-a939-73a40cc533d0.mp4
 
 
