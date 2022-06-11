@@ -1,5 +1,5 @@
 # LazyBankr 
-### Make your own financial tracker with simple input and graph analysis
+#### Make your own financial tracker with simple input and graph analysis
 
 ## 專案展示
 - 專案網址：https://lazybanker-webpack.web.app
