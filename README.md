@@ -34,5 +34,4 @@
 ## 功能介紹
 
 * 使用者登入後點擊新增按鈕，點選日期新增每日消費。
-![Uploading demo (1)_.gif…]()
-
+![demo (1)_](https://user-images.githubusercontent.com/94062367/173174992-2f86b248-d303-4488-89f2-b891c9f1e9c0.gif)
