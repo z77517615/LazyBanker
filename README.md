@@ -1,4 +1,4 @@
-## LazyBanker
+# LazyBanker
 <span style="font-family:Papyrus; font-size:4em;">Make your own financial tracker with simple input and graph analysis</span>
 <br/>
 
@@ -64,3 +64,4 @@
 ![search_](https://user-images.githubusercontent.com/94062367/173176003-4a860845-9e67-4e8a-af2e-18b378b0dd70.gif)
 
 <br/>
+
