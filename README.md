@@ -42,9 +42,7 @@
 ![demo (1)_ (1)](https://user-images.githubusercontent.com/94062367/173175131-3da44568-0429-445b-a1b3-22e888e24748.gif)
 
 * 可用Filter篩選不同日期區間消費總額 :
-  
-
-https://user-images.githubusercontent.com/94062367/173175516-b87e8997-b8bd-437e-aaa6-593bfbe26b67.mp4
+![2022 6 11_下午2 04 11_](https://user-images.githubusercontent.com/94062367/173175967-dad87d46-84b8-4e92-b458-af7dbf78c7d5.gif)
 
 
 
