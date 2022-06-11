@@ -28,3 +28,6 @@
 
 ## 組件架構
 ![](https://i.imgur.com/rjQaY4O.png)
+
+## 功能介紹
+
