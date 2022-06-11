@@ -30,9 +30,6 @@
 ![](https://i.imgur.com/rjQaY4O.png)
 
 ## 功能介紹
-```HTML
-<video id="video" width="320" height="240" controls >
-      <source id="mp4" src="src/assets/demo.mp4" type="video/mp4">
-</video>
-```
+https://user-images.githubusercontent.com/94062367/173174382-243cf4ef-ae78-4366-a939-73a40cc533d0.mp4
+
 
