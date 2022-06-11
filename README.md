@@ -33,22 +33,29 @@
 
 ## 功能介紹
 
-- ###使用者登入後點擊新增按鈕，點選日期新增每日消費。
+###使用者登入後點擊新增按鈕，點選日期新增每日消費。
 ![demo (1)_](https://user-images.githubusercontent.com/94062367/173174992-2f86b248-d303-4488-89f2-b891c9f1e9c0.gif)
 
-* Dashboard 彙整 : 
+<br/>
+
+###Dashboard 彙整 : 
   * 每日消費明細、金額總額。
   * 當月、當前年度消費總額及分類佔比。
 ![demo (1)_ (1)](https://user-images.githubusercontent.com/94062367/173175131-3da44568-0429-445b-a1b3-22e888e24748.gif)
 
-* 可用Filter篩選不同日期區間消費總額 :
+<br/>
+
+###可用Filter篩選不同日期區間消費總額 :
 ![2022 6 11_下午2 04 11_](https://user-images.githubusercontent.com/94062367/173175967-dad87d46-84b8-4e92-b458-af7dbf78c7d5.gif)
 
+<br/>
 
-
-* 不同頁面皆支援編輯、刪除:
+###不同頁面皆支援編輯、刪除:
 ![update_](https://user-images.githubusercontent.com/94062367/173175802-4f60655a-f618-4558-a2bb-11549b2d7b4c.gif)
 
-* Search查詢過往消費紀錄:
+<br/>
+
+###Search查詢過往消費紀錄:
 ![search_](https://user-images.githubusercontent.com/94062367/173176003-4a860845-9e67-4e8a-af2e-18b378b0dd70.gif)
 
+<br/>
