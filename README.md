@@ -31,6 +31,6 @@
 
 ## 功能介紹
 <video id="video" controls="" preload="none" poster="封面">
-      <source id="mp4" src="" type="video/mp4">
+      <source id="mp4" src="src/assets/demo.mp4" type="video/mp4">
 </videos>
 
