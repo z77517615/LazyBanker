@@ -35,3 +35,10 @@
 
 * 使用者登入後點擊新增按鈕，點選日期新增每日消費。
 ![demo (1)_](https://user-images.githubusercontent.com/94062367/173174992-2f86b248-d303-4488-89f2-b891c9f1e9c0.gif)
+
+* Dashboard 彙整 : 
+  * 每日消費明細、金額總額。
+  * 當月、當前年度消費總額及分類佔比。
+![demo (1)_ (1)](https://user-images.githubusercontent.com/94062367/173175131-3da44568-0429-445b-a1b3-22e888e24748.gif)
+
+
