@@ -1,4 +1,4 @@
-# LazyBanker   <font face="黑體" size=2>Make your own financial tracker with simple input and graph analysis</font>
+# LazyBanker   <font face="黑體" size=3>Make your own financial tracker with simple input and graph analysis</font>
 
 <br/>
 
