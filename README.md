@@ -41,4 +41,16 @@
   * 當月、當前年度消費總額及分類佔比。
 ![demo (1)_ (1)](https://user-images.githubusercontent.com/94062367/173175131-3da44568-0429-445b-a1b3-22e888e24748.gif)
 
+* 可用Filter篩選不同日期區間消費總額 :
+  
+
+https://user-images.githubusercontent.com/94062367/173175516-b87e8997-b8bd-437e-aaa6-593bfbe26b67.mp4
+
+
+
+* 不同頁面皆支援編輯、刪除:
+![update_](https://user-images.githubusercontent.com/94062367/173175802-4f60655a-f618-4558-a2bb-11549b2d7b4c.gif)
+
+* Search查詢過往消費紀錄:
+ ![Uploading search_.gif…]()
 
