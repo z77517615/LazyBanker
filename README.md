@@ -1,4 +1,4 @@
-# LazyBanker   <span style="font-family:Papyrus; font-size:4em;">Make your own financial tracker with simple input and graph analysis</span>
+<span style="font-family:Papyrus; font-size:12em;"> LazyBanker</span> <span style="font-family:Papyrus; font-size:4em;">Make your own financial tracker with simple input and graph analysis</span>
 <br/>
 
 ## 專案展示
