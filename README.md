@@ -9,19 +9,19 @@
 ![](https://i.imgur.com/JDqOzik.png)
 
 <br/>
+
 ## 使用技術
 
-| skill                     | description                                                                                                                          |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| React ( hook )            | SPA, reusable functional components, custom hooks                                                                                    |
-| React Router              | SPA, public and private route set up                                                                                                 |
-| React Context             | pass data through nested components tree                                                                                             |
-| styled-components         | CSS-In-JS library for styling                                                                                                        |
-| CSS                       | help accelerating development speed                                                                                                  |
-| Third-Party Modules       | [Browser Image Compression](https://www.npmjs.com/package/browser-image-compression), [Swiper](https://www.npmjs.com/package/swiper) |
-| Prettier                  | keep coding style consistent and better formatted                                                                                    |
-                                                                                                    |
-                                                                                     |
-| Firebase                  | Firestore, Storage, Authentication, Hosting for Back-End                                                                             |
+| skill                     | description                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------| 
+| React ( hook )            | 建立SPA、可重複使用components 及custom hooks                                                                                          |
+| React Router              | SPA、建立會員檢視頁面                                                                                                                 |
+| React Context             | 儲存會員資料及傳輸Data filter                                                                                                                 
+| CSS                       | 網頁版面設置                                                                         |
+| dayjs                     | 取得格式化日期、時間
+| Apexcharts                | 資料圖像化繪圖套件
+| Prettier                  | 維持coding style                                                                                  |
+| Firebase                  | Firestore, Storage, Authentication, Hosting for Back-End      
+| Webpack                   | 打包模組
 
 <br/>
