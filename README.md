@@ -29,12 +29,16 @@
 ## 組件架構
 ![](https://i.imgur.com/rjQaY4O.png)
 
-## 功能介紹
-https://user-images.githubusercontent.com/94062367/173174382-243cf4ef-ae78-4366-a939-73a40cc533d0.mp4
-* 使用者登入後點擊新增按鈕，點選日期新增每日消費。
+<br/>
+
+## 功能介紹* 使用者登入後點擊新增按鈕，點選日期新增每日消費。
 * 首頁整理:
   * 消費圖表分析
-  * 計算每日消費總額、每日消費L
+  * 計算每日消費總額、每日消費List
+  * 各頁面皆可編輯、刪除 List
+  * 點選Filter，過濾顯示資料
+  * Search Bar篩選過往消費紀錄
 
+https://user-images.githubusercontent.com/94062367/173174382-243cf4ef-ae78-4366-a939-73a40cc533d0.mp4
 
 
