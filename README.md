@@ -30,5 +30,5 @@
 ![](https://i.imgur.com/rjQaY4O.png)
 
 ## 功能介紹
-<video src="src/assets/demo.mp4" width="650px">
+<img src="src/assets/demo.mp4" width="650px">
 
