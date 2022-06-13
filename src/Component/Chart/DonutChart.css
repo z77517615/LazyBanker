@@ -23,7 +23,8 @@ header.title {
 }
 
 .emptyarray{
-  height:300px;
-  line-height: 300px;
+  height:180px;
+  width:340px;
+  line-height: 180px;
   text-align: center;
 }
