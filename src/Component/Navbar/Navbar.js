@@ -1,5 +1,4 @@
 import "./Navbar.css";
-// import bank from '../../assets/bank.svg'
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -14,7 +13,6 @@ export default function Navbar() {
     <nav className="navbar">
       <ul>
         <li className="title">
-          {/* <img src={bank} alt="bank logo" /> */}
           <Link to="/">
             <span>Lazybanker</span>
           </Link>

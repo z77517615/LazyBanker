@@ -46,8 +46,8 @@ export default function Signup() {
   return (
     <div className="bg">
       <div className="first-title">
-        <center className="lg-title">Easy record with LazyBanker</center>
-        <center className="lg-discribe">
+        <center className="bg-title">Easy record with LazyBanker</center>
+        <center className="bg-discribe">
           Make your own financial tracker with simple input and graph analysis
         </center>
       </div>

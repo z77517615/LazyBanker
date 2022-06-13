@@ -62,11 +62,6 @@ export const ExpenseMonth = [
   { type: "11", amount: 0 },
   { type: "12", amount: 0 },
 ];
-// export const expenseMon = [
-//   { type: 'Investments', amount: 0, color: incomeColors[0] },
-//   { type: 'Gifts', amount: 0, color: incomeColors[1] },
-//   { type: 'Salary', amount: 0, color: incomeColors[2] },
-// ];
 
 export const resetCategories = () => {
   ExpenseMonth.forEach((c) => (c.amount = 0));

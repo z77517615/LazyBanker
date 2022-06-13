@@ -1,14 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "./useAuthContext";
 //firebase
-import { auth } from "../firebase/config";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, provider } from "../firebase/config";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 
 export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [isCancelled, setIsCanelled] = useState(false);
   const { dispatch } = useAuthContext();
+
+  const signInWithGoogle = () => {
+    setError(null);
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        dispatch({ type: "LOGIN", payload: user });
+        if (!isCancelled) {
+          setError(null);
+        }
+      })
+      .catch((error) => {
+        if (!isCancelled) {
+          if (error.message == "Firebase: Error (auth/unauthorized-domain).") {
+            setError(
+              "Login from unauthorized domain. Please try login with email and password"
+            )}
+            if (error.message == "Firebase: Error (auth/popup-closed-by-user).") {
+              setError(
+                "Closed by user, please try again"
+              );
+          } else {
+            setError(error.message);
+          }
+        }
+      });
+  };
 
   const login = async (email, password) => {
     setError(null);
@@ -41,5 +68,5 @@ export const useLogin = () => {
     return () => setIsCanelled(true);
   }, []);
 
-  return { error, login, isPending };
+  return { error, login, isPending, signInWithGoogle };
 };

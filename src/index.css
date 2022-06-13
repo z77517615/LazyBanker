@@ -7,7 +7,7 @@ body {
   font-size: 1.1em;
   overflow-x: hidden;
   position: relative;
-  max-height: fit-content;
+  height: 100%;
 }
 
 ul,
@@ -51,6 +51,7 @@ a {
   position: absolute;
   top: 0px;
   width: 100%;
+  height: 100vh;
   background: rgb(232, 239, 237);
   z-index: -999;
 }
@@ -60,6 +61,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 0 2rem;
+  background: rgb(232, 239, 237);
+  z-index: -998;
 }
 
 .first-title {
@@ -102,6 +105,7 @@ a {
 .signupform-container {
   width: 360px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -115,7 +119,7 @@ a {
   margin: 20px 5px;
 }
 
-.lg-title {
+.bg-title {
   color: #333;
   text-transform: uppercase;
   font-size: 36px;
@@ -124,7 +128,7 @@ a {
   text-shadow: 1px 1px 2px rgb(31, 32, 31);
 }
 
-.lg-discribe {
+.bg-discribe {
   margin-top: 5px;
   font-size: 20px;
   color: rgb(194, 189, 183);
@@ -142,7 +146,7 @@ a {
   margin-right: 5px;
 }
 
-.lg-btn{
+.lg-btn {
   display: block;
   width: 100%;
   height: 40px;
@@ -153,7 +157,6 @@ a {
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
-  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   margin: 1rem 0;
   cursor: pointer;
@@ -161,9 +164,9 @@ a {
   position: relative;
 }
 
-.lg-btn a{
+.lg-btn a {
   display: block;
-  width:100%
+  width: 100%;
 }
 
 .lg-btn:hover {
@@ -214,11 +217,13 @@ a {
     grid-template-columns: 1fr;
     padding: 0rem;
   }
+
   .demo-container {
     display: none;
   }
   .loginform-container,
   .signupform-container {
-    width: 300px;
+    max-width: 360px;
+    padding: 0px;
   }
 }

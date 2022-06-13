@@ -3,7 +3,6 @@ div.Sidecalendar {
   font-size: 1rem;
   display: flex;
   flex-direction: column;
-  /* position: relative; */
 }
 .Sidecalendar-header {
   display: flex;
@@ -124,10 +123,3 @@ img.arrow:active {
   height:35px;
   padding: 0;
 }
-
-/* .search-container button:active,
-.search-container button img:active{
-  /* border:0; */
-  /* background:none; */
-  
-/* }  */

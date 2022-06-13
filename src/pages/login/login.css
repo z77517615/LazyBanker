@@ -1,5 +1,5 @@
 .login-form {
-  margin: auto;
+  margin: 0px auto;
 }
 
 .signin-title {
@@ -9,6 +9,38 @@
 }
 .loginform-container {
   margin-top: -20px;
+}
+
+.google {
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  background-image: linear-gradient(to right, #fadada, #f89c9c, #f45252);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+.google:active {
+  background-color: #fadada;
+  box-shadow: 3px 3px 3px rgb(170, 170, 170);
+  border: none;
+}
+
+.google img {
+  /* margin: 1rem 0; */
+  width: 30px;
+}
+
+.btn-text {
+  justify-content: center;
+  padding: 10px;
+  color: #fff;
 }
 
 @media (max-width: 800px) {

@@ -64,15 +64,11 @@ button:active {
   left: 33%;
   top: 10%;
   background-color: rgb(245, 245, 245);
-  /* background-size:contain; */
   width: 35%;
   z-index: 999;
 }
 
 @media (max-width: 1199px) {
-  /* .transaction-form{
-        width:80%;
-    } */
   .transaction {
     width: 80%;
     display: flex;

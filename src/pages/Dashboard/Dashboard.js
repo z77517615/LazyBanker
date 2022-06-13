@@ -45,7 +45,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (chartfilter == "this month") {
       setStartday(new Date(dayjs().date(1).format(format)));
-      setEndday(new Date(dayjs().date(31).format(format)));
+      setEndday(new Date(dayjs().endOf('month').format(format)));
       return;
     }
     if (chartfilter == "30days") {

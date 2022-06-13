@@ -6,15 +6,14 @@ import left from "../../assets/left.png";
 import { getMonth } from "../../Hooks/useutil";
 import styles from "./SmallCalendar.module.css";
 
-
-export  function SmallCalendar({ passpickday, selc, setSelc }){
+export function SmallCalendar({ passpickday, selc, setSelc }) {
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 
   const [currentMonthIndex, setCurrentIMonthIndex] = useState(dayjs().month());
   const [currentMonth, setCurentMonth] = useState(getMonth());
   const [pickday, setPickday] = useState(dayjs().format(format));
-// console.log(currentMonth[0])
+
   useEffect(() => {
     setCurentMonth(getMonth(currentMonthIndex));
   }, [currentMonthIndex]);
@@ -34,11 +33,10 @@ export  function SmallCalendar({ passpickday, selc, setSelc }){
     if (selc && pickday === currtDay) {
       passpickday(pickday);
       return `${styles.selected}`;
-    } 
+    }
     if (selc && pickday === nowday) {
       passpickday(pickday);
-    }
-    else {
+    } else {
       return "";
     }
   }
@@ -47,7 +45,7 @@ export  function SmallCalendar({ passpickday, selc, setSelc }){
     <div className={styles.smallcalendar}>
       <header className={styles.smallcalendar_header}>
         <button className={styles.cal_button} onClick={handlePrevMonth}>
-          <img  className={styles.arrow} src={left}></img>
+          <img className={styles.arrow} src={left}></img>
         </button>
         <p className="smallcalendar-header_title">
           {dayjs(new Date(dayjs().year(), currentMonthIndex)).format(
@@ -55,7 +53,7 @@ export  function SmallCalendar({ passpickday, selc, setSelc }){
           )}
         </p>
         <button className={styles.cal_button} onClick={handleNextMonth}>
-          <img  className={styles.arrow} src={right}></img>
+          <img className={styles.arrow} src={right}></img>
         </button>
       </header>
       <main className={styles.cal_main}>
@@ -69,7 +67,6 @@ export  function SmallCalendar({ passpickday, selc, setSelc }){
                 key={idx}
                 className={`${styles.days} ${getDayClass(day)}`}
                 onClick={() => (setSelc(true), setPickday(day.format(format)))}
-
               >
                 <span>{day.format("D")}</span>
               </button>

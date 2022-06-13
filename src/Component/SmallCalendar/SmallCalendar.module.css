@@ -20,7 +20,6 @@
   grid-template-rows: repeat(6, 50px);
   overflow-x: hidden;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .cal_main span {
