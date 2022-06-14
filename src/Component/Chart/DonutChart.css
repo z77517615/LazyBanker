@@ -2,7 +2,6 @@
   background: white;
   border: rgb(224, 222, 222) solid 2px;
   border-radius: 4%;
-  height: fit-content;
   margin: 10px auto;
   padding: 5px;
   color: green;
@@ -12,7 +11,6 @@
   background: white;
   border: rgb(224, 222, 222) solid 2px;
   border-radius: 4%;
-  height: fit-content;
   margin: 10px auto;
   padding: 5px;
   color: red;

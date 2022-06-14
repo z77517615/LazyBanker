@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DonutChart.css";
 import Chart from "react-apexcharts";
+import shopping from "../../assets/shopping.svg";
 
 import { useChart } from "../../Hooks/useChart";
 
@@ -24,7 +25,19 @@ export const DonutChart = ({ title1, documents }) => {
       <header className="title">{title1} </header>
       <main>
         {emptyarray && (
-          <div className="emptyarray">Please enter your first Transaction</div>
+          <div className="emptyarray">
+            Click
+            <img
+              src={shopping}
+              style={{
+                width: "30px",
+                height: "30px",
+                marginRight: "5px",
+                marginLeft: "5px",
+              }}
+            ></img>
+            to enter your first Transaction
+          </div>
         )}
         {!emptyarray && (
           <Chart
