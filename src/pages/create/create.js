@@ -12,8 +12,6 @@ const create = () => {
   const { user } = useAuthContext();
   const [transaction, setTransaction] = useState("");
 
-
-
   const passtransaction = (transaction) => {
     setTransaction(transaction);
   };

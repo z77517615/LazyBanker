@@ -76,7 +76,7 @@ export default function AddList({ uid, passTransaction }) {
                   className="delete"
                   onClick={() => deleteTransaction(document.id)}
                 >
-                  Delet
+                  Delete
                 </button>
               </div>
             </div>

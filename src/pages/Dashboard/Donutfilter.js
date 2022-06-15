@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import "./Filter.css"
+import "./Donutfilter.css"
 
 const filterList = ['this month','30days', '90days', 'half a year', 'year']
 
-export default function Filter({ changeFilter }) {
+export default function Donutfilter({ changeDonutFilter }) {
   const [currentFilter, setCurrentFilter] = useState('this month')
 
   const handleClick = (newFilter) => {
     setCurrentFilter(newFilter)
-    changeFilter(newFilter)
+    changeDonutFilter(newFilter)
   }
 
   return (

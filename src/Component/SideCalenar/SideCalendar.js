@@ -8,7 +8,7 @@ import { getWeekday } from "../../Hooks/useutil";
 import { useSelectContext } from "../../Hooks/useSelectContext";
 import { Spend} from "../../Hooks/useSum";
 
-export function SideCalendar({ documents,getDayClass }) {
+export function SideCalendar({ documents }) {
   const format = "YYYY-MM-DD";
   const nowday = dayjs().format(format);
 

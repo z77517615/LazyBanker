@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./Filter.css"
+import "./BarChartfilter.css"
 
 const filterBarList = ['this year', 'last year', 'the year before']
 

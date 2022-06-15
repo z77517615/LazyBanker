@@ -12,14 +12,14 @@ import { useSelectContext } from "../../Hooks/useSelectContext";
 import { DonutChart } from "../../Component/Chart/DonutChart";
 import { BarChart } from "../../Component/Chart/BarChart";
 import TransactionList from "../../Component/TransactionList/TransactionList";
-import Filter from "./Filter";
+import Donutfilter from "./Donutfilter";
 import Barchartfilter from "./Barchartfilter";
 import Userbar from "../../Component/Userbar/Userbar";
 
 export default function Dashboard() {
   const { user } = useAuthContext();
   const { date, filter, account } = useSelectContext();
-  const [chartfilter, setChartfilter] = useState("this month");
+  const [donutchartfilter, setDonutChartfilter] = useState("this month");
   const [barChartfilter, setBarChartfilter] = useState("this year");
   const [startday, setStartday] = useState("");
   const [endday, setEndday] = useState("");
@@ -34,8 +34,8 @@ export default function Dashboard() {
   const format = "YYYY-MM-DD";
   const today = new Date(dayjs().format(format));
 
-  const changeFilter = (newFilter) => {
-    setChartfilter(newFilter);
+  const changeDonutFilter = (newDonutFilter) => {
+    setDonutChartfilter(newDonutFilter);
   };
 
   const changeBarFilter = (newBarFilter) => {
@@ -43,32 +43,32 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
-    if (chartfilter == "this month") {
+    if (donutchartfilter == "this month") {
       setStartday(new Date(dayjs().date(1).format(format)));
       setEndday(new Date(dayjs().endOf('month').format(format)));
       return;
     }
-    if (chartfilter == "30days") {
+    if (donutchartfilter == "30days") {
       setStartday(new Date(dayjs().subtract(30, "day").format(format)));
       setEndday(today);
       return;
     }
-    if (chartfilter == "90days") {
+    if (donutchartfilter == "90days") {
       setStartday(new Date(dayjs().subtract(90, "day").format(format)));
       setEndday(today);
       return;
     }
-    if (chartfilter == "half a year") {
+    if (donutchartfilter == "half a year") {
       setStartday(new Date(dayjs().subtract(180, "day").format(format)));
       setEndday(today);
       return;
     }
-    if (chartfilter == "year") {
+    if (donutchartfilter == "year") {
       setStartday(new Date(dayjs().subtract(1, "year").format(format)));
       setEndday(today);
       return;
     }
-  }, [chartfilter]);
+  }, [donutchartfilter]);
 
   useEffect(() => {
     if (barChartfilter == "this year") {
@@ -88,7 +88,7 @@ export default function Dashboard() {
     }
   }, [barChartfilter]);
 
-  const filterdocumnts = documents
+  const donutfilterdocumnts = documents
     ? documents.filter((t) => {
         var date = new Date(t.date);
         return date >= startday && date <= endday;
@@ -128,14 +128,14 @@ export default function Dashboard() {
         <Userbar />
         <main className="Chart-container">
           <div className="Chart-container_chart">
-            <div>{documents && <Filter changeFilter={changeFilter} />}</div>
+            <div>{documents && <Donutfilter changeDonutFilter={changeDonutFilter} />}</div>
             <div>
               <section className="Dounutchart-container">
-                {filterdocumnts && (
-                  <DonutChart title1="Income" documents={filterdocumnts} />
+                {donutfilterdocumnts && (
+                  <DonutChart title1="Income" documents={donutfilterdocumnts} />
                 )}
-                {filterdocumnts && (
-                  <DonutChart title1="Expend" documents={filterdocumnts} />
+                {donutfilterdocumnts && (
+                  <DonutChart title1="Expend" documents={donutfilterdocumnts} />
                 )}
               </section>
               <div>

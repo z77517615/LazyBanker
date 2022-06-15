@@ -26,15 +26,6 @@ export const useCollection = (col, _userquery, _orderBy, limitnumber) => {
     if (query1) {
       ref = query(ref, where(...query1));
     }
-    // if(filter){
-    //     ref = query(ref , where(...filter))
-    // }
-    // if(reffilterquery){
-    //     console.log(222222)
-    //     ref = query(ref , where(...reffilterquery))
-    //     console.log(2,ref)
-    // }
-
     if (reforderBy) {
       ref = query(ref, orderBy(...reforderBy));
     }

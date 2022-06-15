@@ -22,7 +22,6 @@ export default function AddForm({ uid, transaction,popup,setPopup,setPopupstyle}
     setPickday(pickday)
   }
 
-
   const handleSubmit = (e) => {
 
     e.preventDefault();
