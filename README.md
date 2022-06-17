@@ -11,7 +11,7 @@
 <br/>
 
 ## 使用技術
-![](https://i.imgur.com/bD9WmIr.png)                                                                                                                         |
+![](https://i.imgur.com/BSrPsTc.png)                                                                                                                         |
 
 <br/>
 ## 組件架構
