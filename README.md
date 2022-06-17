@@ -10,7 +10,7 @@
 <br/>
 
 ## 使用技術
-![](https://i.imgur.com/fQTDy59.png)                                                                                                                         |
+![](https://i.imgur.com/KJ6EXci.png)                                                                                                                         |
 <br/>
 
 ## 組件架構
