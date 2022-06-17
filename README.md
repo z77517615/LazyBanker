@@ -14,10 +14,10 @@
 
 | skill                     | description                                                                                                                         |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------| 
-| React ( hook )            | 建立SPA、可重複使用components 及custom hooks                                                                                          |
+| React ( hooks )           | 建立SPA、可重複使用components 及custom hooks                                                                                          |
 | React Router              | SPA、建立會員檢視頁面                                                                                                                 |
 | React Context             | 儲存會員資料及傳輸Data filter                                                                                                         |       
-| CSS                       | 網頁版面設置                                                                                                                         |
+| CSS、CSS Module           | 網頁版面設置                                                                                                                         |
 | dayjs                     | 取得格式化日期、時間                                                                                                                  |
 | Apexcharts                | 資料圖像化繪圖套件                                                                                                                    |
 | Prettier                  | 維持coding style                                                                                                                     |
