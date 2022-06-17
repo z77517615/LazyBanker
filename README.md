@@ -11,22 +11,9 @@
 <br/>
 
 ## 使用技術
-
-| skill                     | description                                                                                                                         |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------| 
-| React ( hooks )           | 建立SPA、可重複使用components 及custom hooks                                                                                          |
-| React Router              | SPA、建立會員檢視頁面                                                                                                                 |
-| React Context             | 儲存會員資料及傳輸Data filter                                                                                                         |       
-| CSS、CSS Module           | 網頁版面設置                                                                                                                         |
-| dayjs                     | 取得格式化日期、時間                                                                                                                  |
-| Apexcharts                | 資料圖像化繪圖套件                                                                                                                    |
-| Prettier                  | 維持coding style                                                                                                                     |
-| Firebase                  | Firestore, Storage, Authentication, Hosting for Back-End                                                                             |
-| BaBel、Webpack            | 模組打包                                                                                                                              |
-| Git、GitHub               | 版本控管                                                                                                                              |
+![](https://i.imgur.com/bD9WmIr.png)                                                                                                                         |
 
 <br/>
-
 ## 組件架構
 ![](https://i.imgur.com/D2lFEOz.png)
 
