@@ -25,11 +25,10 @@ export default function Dashboard() {
   const [endday, setEndday] = useState("");
   const [startyear, setStartyear] = useState("");
   const [endyear, setEndyear] = useState("");
-  const { documents, error } = useCollection("transaction", [
-    "uid",
-    "==",
-    user.uid,
-  ]);
+  const { documents, error } = useCollection(
+    "transaction",
+    ["uid", "==", user.uid]
+  );
 
   const format = "YYYY-MM-DD";
   const today = new Date(dayjs().format(format));
@@ -45,7 +44,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (donutchartfilter == "this month") {
       setStartday(new Date(dayjs().date(1).format(format)));
-      setEndday(new Date(dayjs().endOf('month').format(format)));
+      setEndday(new Date(dayjs().endOf("month").format(format)));
       return;
     }
     if (donutchartfilter == "30days") {
@@ -120,7 +119,8 @@ export default function Dashboard() {
         }
       })
     : null;
-
+    
+    
   return (
     <>
       <Navbar />
@@ -128,7 +128,11 @@ export default function Dashboard() {
         <Userbar />
         <main className="Chart-container">
           <div className="Chart-container_chart">
-            <div>{documents && <Donutfilter changeDonutFilter={changeDonutFilter} />}</div>
+            <div>
+              {documents && (
+                <Donutfilter changeDonutFilter={changeDonutFilter} />
+              )}
+            </div>
             <div>
               <section className="Dounutchart-container">
                 {donutfilterdocumnts && (

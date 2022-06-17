@@ -64,40 +64,42 @@ export default function TransactionList({ documents }) {
   return (
     <div className="transaction-list">
       {documents &&
-        documents.map((document) => (
-          <div
-            className="transaction-item"
-            style={background(document.category)}
-            key={document.id}
-          >
-            <div>
-              <img src={icon(document.category)}></img>
-            </div>
-            <div className="transaction-item__list">
-              <p>{document.date}</p>
-              <p>
-                {document.category} : ${document.amount}
-              </p>
-              <p>Name : {document.transactionName}</p>
-            </div>
-            <button
-              className="transaction-item__list_edit"
-              onClick={() => (
-                setPopup(true),
-                setPopupstyle(true),
-                setTransaction({ ...document, uuid: uuidv4() })
-              )}
+        documents
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .map((document) => (
+            <div
+              className="transaction-item"
+              style={background(document.category)}
+              key={document.id}
             >
-              <img className="transaction-edit" src={Edit} />
-            </button>
-            <button
-              className="transaction-item__list_delete"
-              onClick={() => deleteTransaction(document.id)}
-            >
-              <img className="transaction-delete" src={Delete} />
-            </button>
-          </div>
-        ))}
+              <div>
+                <img src={icon(document.category)}></img>
+              </div>
+              <div className="transaction-item__list">
+                <p>{document.date}</p>
+                <p>
+                  {document.category} : ${document.amount}
+                </p>
+                <p>Name : {document.transactionName}</p>
+              </div>
+              <button
+                className="transaction-item__list_edit"
+                onClick={() => (
+                  setPopup(true),
+                  setPopupstyle(true),
+                  setTransaction({ ...document, uuid: uuidv4() })
+                )}
+              >
+                <img className="transaction-edit" src={Edit} />
+              </button>
+              <button
+                className="transaction-item__list_delete"
+                onClick={() => deleteTransaction(document.id)}
+              >
+                <img className="transaction-delete" src={Delete} />
+              </button>
+            </div>
+          ))}
       {popup && (
         <AddForm
           uid={user.uid}
