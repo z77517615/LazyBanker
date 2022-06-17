@@ -22,8 +22,8 @@
 | Apexcharts                | 資料圖像化繪圖套件                                                                                                                    |
 | Prettier                  | 維持coding style                                                                                                                     |
 | Firebase                  | Firestore, Storage, Authentication, Hosting for Back-End                                                                             |
-| Webpack                   | 模組打包                                                                                                                              |
-| Git                       | 版本控管                                                                                                                              |
+| BaBel、Webpack            | 模組打包                                                                                                                              |
+| Git、GitHub               | 版本控管                                                                                                                              |
 
 <br/>
 
