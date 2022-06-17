@@ -47,7 +47,8 @@
 <br/>
 
 ### Search查詢過往消費紀錄:
-![demo search](https://user-images.githubusercontent.com/94062367/174228539-4852bc63-6af0-492a-be35-0b8fdaecdda4.gif)
+https://user-images.githubusercontent.com/94062367/174228729-173724d0-659c-463e-b885-c704d8a680cc.mp4
+
 
 
 <br/>
