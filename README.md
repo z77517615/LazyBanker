@@ -11,11 +11,10 @@
 
 ## 使用技術
 ![](https://i.imgur.com/BSrPsTc.png)                                                                                                                         |
-
 <br/>
+
 ## 組件架構
 ![](https://i.imgur.com/D2lFEOz.png)
-
 <br/>
 
 ## 功能介紹
