@@ -25,6 +25,9 @@
 <br/>
 
 ### 使用者登入後點擊新增按鈕，點選日期新增每日消費。
+  * 使用dayjs取的每月日期放入2維陣列後，以map方式取出render上圖表。
+  * 以Grid / CSS Styling Calendar Component 。
+  * useState控制月份Index，點選箭頭切換月份。
 ![demo (1)_](https://user-images.githubusercontent.com/94062367/173174992-2f86b248-d303-4488-89f2-b891c9f1e9c0.gif)
 
 <br/>
