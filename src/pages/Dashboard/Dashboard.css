@@ -10,7 +10,8 @@
 
 .Chart-container {
   display: flex;
-  flex-wrap: wrap-reverse;
+  overflow-y: hidden;
+  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -41,12 +42,16 @@
 
 .list-container {
   width: 360px;
-  max-height: fit-content;
+  max-height: 550px;
   margin: 3px auto;
   padding: 10px;
 }
 
 @media (max-width: 1200px) {
+  .Chart-container {
+    flex-wrap: wrap-reverse;
+  }
+
   .Barchart-container {
     flex-wrap: wrap;
   }

@@ -12,8 +12,11 @@ export function SmallCalendar({ passpickday, selc, setSelc }) {
 
   const [currentMonthIndex, setCurrentIMonthIndex] = useState(dayjs().month());
   const [currentMonth, setCurentMonth] = useState(getMonth());
-  const [pickday, setPickday] = useState(dayjs().format(format));
+  const [pickday, setPickday] = useState(dayjs().format(format))
 
+
+  console.log(currentMonthIndex)
+  
   useEffect(() => {
     setCurentMonth(getMonth(currentMonthIndex));
   }, [currentMonthIndex]);
