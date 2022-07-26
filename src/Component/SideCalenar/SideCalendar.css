@@ -25,7 +25,7 @@ div.Sidecalendar {
   display: grid;
   padding: 5px;
   grid-template-columns: repeat(7, 50px);
-  grid-template-rows: repeat(2, 50px);
+  grid-template-rows: repeat(2, 60px);
   font-weight: bold;
 }
 
@@ -75,7 +75,6 @@ div.Sidecalendar {
 #total {
   font-size: 12px;
   position: absolute;
-  bottom: -7px;
   left: 0px;
   right: 0px;
   color: rgb(226, 201, 57);

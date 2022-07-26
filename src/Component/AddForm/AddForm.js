@@ -231,7 +231,7 @@ export default function AddForm({ uid, transaction,popup,setPopup,setPopupstyle}
                   <input
                     type="number"
                     required
-                    onChange={(e) => setAmount(e.target.value)}
+                    onChange={(e) => setAmount(e.target.value.replace(/[^0-9,]+/))}
                     value={amount}
                     placeholder="Amount ($)"
                   />

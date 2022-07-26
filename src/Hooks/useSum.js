@@ -25,6 +25,12 @@ export const Spend = (day, documents) => {
         daymoney = daymoney - daylost;
       }
     }
+    if (daymoney > 10000 || daymoney < -10000){
+      let quo = daymoney / 10000
+      return Math.floor(Math.floor(quo * Math.pow(10, (2 || 0) + 1)) / 10) / Math.pow(10, (2 || 0)) + "萬"
+
+    }
     return daymoney;
   }
 };
+
