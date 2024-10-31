@@ -1,8 +1,9 @@
 {
-  "name": "webpack-firebase",
+  "name": "lazy-banker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://z77517615.github.io/LazyBanker",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint",
