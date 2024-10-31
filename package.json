@@ -5,8 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    "start": "webpack serve"
+    "lint": "eslint",
+    "commit": "git cz",
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -17,13 +24,19 @@
     "@babel/plugin-transform-runtime": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-react": "^7.16.7",
+    "@eslint/js": "^9.12.0",
     "babel-loader": "^8.2.5",
+    "commitizen": "^4.3.1",
+    "conventional-changelog-cli": "^5.0.0",
     "css-loader": "^6.7.1",
+    "cz-customizable": "^7.2.1",
     "dotenv-webpack": "^7.1.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-react": "^7.37.1",
     "file-loader": "^6.2.0",
+    "globals": "^15.11.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
-    "node-sass": "^7.0.1",
     "path": "^0.12.7",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
@@ -47,6 +60,7 @@
     "react-native-svg": "^12.3.0",
     "react-router-dom": "^5.3.1",
     "regenerator-runtime": "^0.13.9",
+    "sass": "^1.79.5",
     "uuid": "^8.3.2",
     "victory-native": "^36.4.1"
   }
