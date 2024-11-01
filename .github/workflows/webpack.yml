@@ -30,12 +30,7 @@ jobs:
 
       - name: Deploy with gh-pages
         run: |
-          git config --global user.name "${{ env.user_name }}"
-          git config --global user.email "${{ env.user_email }}"
-          git remote set-url origin "https://${{ env.github_token }}@github.com/${{ env.repository }}"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
